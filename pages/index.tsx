@@ -21,7 +21,7 @@ export default function Home() {
         </h2>
         <nav className="text-center md:text-left my-6">
           <Link href="/about">
-            <a className="btn btn-primary md:mr-4">Learn More</a>
+            <a className="btn btn-primary inline-block md:mr-4">Learn More</a>
           </Link>
           <Link href="/cues">
             <a className="hidden md:inline-block btn btn-secondary">
