@@ -1,0 +1,59 @@
+/*
+Headings
+*/
+h1 {
+  @apply text-4xl;
+}
+h2 {
+  @apply text-3xl mt-14;
+}
+h3 {
+  @apply text-2xl mt-10;
+}
+h4 {
+  @apply text-2xl mt-8;
+}
+h5 {
+  @apply text-lg mt-6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  @apply mb-6;
+}
+
+p {
+  @apply text-base mb-4;
+}
+
+/**
+Lists
+*/
+ol,
+ul {
+  @apply my-4;
+}
+ol {
+  @apply list-decimal;
+}
+ul {
+  @apply list-disc;
+}
+ol li,
+ul li {
+  @apply ml-4;
+}
+
+/*
+Links
+*/
+main a {
+  @apply text-primary underline;
+}
+
+main a:hover {
+  @apply text-highlight underline;
+}

@@ -1,0 +1,11 @@
+.btn {
+  @apply px-8 py-4 rounded no-underline;
+}
+
+.btn-primary {
+  @apply bg-primary text-white !important;
+}
+
+.btn-secondary {
+  @apply bg-secondary text-primary !important;
+}
