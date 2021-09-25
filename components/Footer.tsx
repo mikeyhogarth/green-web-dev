@@ -16,9 +16,19 @@ const Footer = () => {
           Icon={FaTwitter}
         />
       </div>
-      <p>
+      <p className="text-xs">
         Green Web Dev &copy;{new Date().getFullYear()} - Page Weight Budget
         350KB
+      </p>
+      <p className="text-xs">
+        Join the conversation and contribute content over on{" "}
+        <a
+          className="text-black"
+          href="https://github.com/mikeyhogarth/green-web-dev"
+        >
+          github
+        </a>
+        !
       </p>
     </footer>
   );
