@@ -1,6 +1,7 @@
 /**
 Site Header
 */
-header nav ul li a.active {
+header nav ul li a.active,
+header nav ul li a:hover {
   @apply border-b-4;
 }

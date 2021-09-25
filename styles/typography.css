@@ -34,7 +34,7 @@ Lists
 */
 ol,
 ul {
-  @apply my-4;
+  @apply my-6;
 }
 ol {
   @apply list-decimal;
@@ -44,7 +44,7 @@ ul {
 }
 ol li,
 ul li {
-  @apply ml-4;
+  @apply ml-4 text-base;
 }
 
 /*
