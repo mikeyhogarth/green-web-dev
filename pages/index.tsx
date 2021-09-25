@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
+import { FaLightbulb, FaBookReader, FaTree } from "react-icons/fa";
 
 export default function Home() {
   return (
@@ -15,8 +16,8 @@ export default function Home() {
           Practical advice for creating{" "}
           <span className="text-primary">sustainable</span> web applications.
           <aside className="text-2xl py-5 text-gray-400 font-light">
-            Tips for keeping the carbon footprint of your website or application
-            to a minimum, written by web developers, for web developers.
+            Tips and tricks for minimizing the carbon footprint of your website.
+            Written and curated by web developers, for web developers.
           </aside>
         </h2>
         <nav className="text-center md:text-left my-6">
@@ -33,9 +34,7 @@ export default function Home() {
       <hr className="mb-8" />
       <div className="md:flex w-full text-center">
         <div className="flex-grow p-4 md:w-1/3">
-          <span className="material-icons text-6xl text-primary">
-            lightbulb
-          </span>
+          <FaLightbulb className="inline-block text-6xl text-primary" />
           <h3 className="text-xl mt-4 text-primary font-bold">Prompts</h3>
           <p>
             Numerous prompts, ideas and inspiration to help you keep your page
@@ -46,9 +45,7 @@ export default function Home() {
           </Link>
         </div>
         <div className="flex-grow md:mx-2 p-4 md:w-1/3">
-          <span className="material-icons text-6xl text-primary">
-            menu_book
-          </span>
+          <FaBookReader className="inline-block text-6xl text-primary" />
           <h3 className="text-xl mt-4 text-primary font-bold">Articles</h3>
           <p>
             Guides and deep-dives covering a myriad of sustainability topics.
@@ -58,7 +55,7 @@ export default function Home() {
           </Link>
         </div>
         <div className="flex-grow p-4 md:w-1/3">
-          <span className="material-icons text-6xl text-primary">park</span>
+          <FaTree className="inline-block text-6xl text-primary" />
           <h3 className="text-xl mt-4 text-primary font-bold">Impact</h3>
           <p>
             The digital industry are in a unique position to have global impact

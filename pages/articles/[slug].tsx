@@ -2,6 +2,7 @@ import { getContentPage, getContentPages } from "../../utils/file.utils";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import Link from "next/link";
+import { FaCalendarDay } from "react-icons/fa";
 import { enrichData } from "../../utils/article.utils";
 
 interface MetaData {
@@ -26,9 +27,7 @@ export default function Article({ source, data }: Props) {
       <article>
         <h1 className="font-bold">{title}</h1>
         <p className="text-gray-500">
-          <span className="material-icons mr-2 relative top-1">
-            calendar_today
-          </span>
+          <FaCalendarDay className="inline-block relative mr-2 -top-1" />
           Published <time dateTime={date}>{formattedDate}</time>
         </p>
         <hr className="pb-8" />
