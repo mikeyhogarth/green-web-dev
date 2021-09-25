@@ -3,7 +3,6 @@ import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import Link from "next/link";
 import capitalize from "lodash/capitalize";
-
 import Head from "next/head";
 import HtmlHead from "../../components/HtmlHead";
 
