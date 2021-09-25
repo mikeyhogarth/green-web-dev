@@ -1,0 +1,32 @@
+---
+title: Lazy load images
+category: images
+difficulty: easy
+status: draft
+---
+
+[WebP](https://developers.google.com/speed/webp) is a next-generation image format and successor to earlier formats such as JPEGs, PNGs and GIFs. The WebP format offers [25-35% compression](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types#webp) over JPEGs and PNG formats and is supported by all major browsers. The WebP format includes support for;
+
+- Animation
+- Lossless and Lossy formats
+- Transparency
+
+Conversion from other formats into WebP will almost always result in a reduction in size without having to compromise on quality, and there are a number of tools out there which can handle the conversion for you, such as [ImageMagick](https://imagemagick.org/script/webp.php) and the [cwebp Command Line Tool](https://developers.google.com/speed/webp/docs/precompiled).
+
+## Compatibility
+
+Whilst WebP is supported by most modern browsers, you may still want to include a fallback format in case you want to cater for older browsers. You can use the HTML `picture` element for this purpose. The following code;
+
+```
+<picture>
+  <source srcset="/my-image.webp" type="image/webp" />
+  <img src="my-image.jpeg" alt="A picture of a cat" />
+</picture>
+```
+
+Will detect whether or not browser support exists for WebP and then use that in place of the jpeg if the format is supported (the jpeg, in this instance, would not be downloaded at all).
+
+## Relevant Links
+
+- ["Can I use..." entry for lazy attributes](https://caniuse.com/loading-lazy-attr)
+- [MDN article on Lazy Loading](https://developer.mozilla.org/en-US/docs/Web/Performance/Lazy_loading)

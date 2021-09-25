@@ -1,3 +1,7 @@
 pre {
-  @apply bg-gray-100 p-4 mb-4;
+  @apply bg-gray-100 p-4 mb-4 overflow-x-scroll;
+}
+
+p code {
+  @apply bg-gray-100 px-1;
 }

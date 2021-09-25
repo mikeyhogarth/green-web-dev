@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import { getContentPages } from "../../utils/file.utils";
+import capitalize from "lodash/capitalize";
 
 interface Prompt {
   content: string;
@@ -10,29 +11,40 @@ interface Prompt {
 
 interface Props {
   prompts: Prompt[];
+  categories: string[];
 }
 
-export default function Articles(props: Props) {
+export default function Articles({ categories, prompts }: Props) {
   return (
     <div>
       <Head>
         <title>Green Web Dev :: Prompts</title>
       </Head>
       <h1>Prompts</h1>
-      <ul>
-        {props.prompts.map((a) => (
-          <li key={a.slug}>
-            <Link href={`/prompts/${a.slug}`}>
-              <a>{a.data.title}</a>
-            </Link>
-          </li>
-        ))}
-      </ul>
+      {categories.map((category) => (
+        <>
+          <h3>{capitalize(category)}</h3>
+          <ul>
+            {prompts
+              .filter(
+                (p) => p.data.category.toLowerCase() === category.toLowerCase()
+              )
+              .map((prompt) => (
+                <li key={prompt.slug}>
+                  <Link href={`/prompts/${prompt.slug}`}>
+                    <a>{prompt.data.title}</a>
+                  </Link>
+                </li>
+              ))}
+          </ul>
+        </>
+      ))}
     </div>
   );
 }
 
 export async function getStaticProps() {
   const prompts = await getContentPages("prompts");
-  return { props: { prompts } };
+  const categories = Array.from(new Set(prompts.map((p) => p.data.category)));
+  return { props: { prompts, categories } };
 }

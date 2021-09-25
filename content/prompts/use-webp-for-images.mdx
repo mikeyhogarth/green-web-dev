@@ -1,0 +1,33 @@
+---
+title: Use WebP for images
+category: images
+difficulty: easy
+status: draft
+---
+
+[WebP](https://developers.google.com/speed/webp) is a next-generation image format developed by Google and can be used in place of earlier formats such as JPEGs, PNGs and GIFs. The WebP format offers [25-35% compression](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types#webp) over older formats and is [supported by all major browsers](https://caniuse.com/webp). The WebP format includes support for;
+
+- Animation
+- Lossless and Lossy formats
+- Transparency
+
+Conversion from other formats into WebP will almost always result in a reduction in size without having to compromise on quality, and there are a number of tools out there which can handle the conversion for you, such as [ImageMagick](https://imagemagick.org/script/webp.php) and the official [Command Line Tool](https://developers.google.com/speed/webp/docs/precompiled).
+
+## Compatibility
+
+Whilst WebP is supported by most modern browsers, you may still want to include a fallback format in case you want to cater for older browsers. You can use the HTML `picture` element for this purpose;
+
+```
+<picture>
+  <source srcset="/my-image.webp" type="image/webp" />
+  <img src="my-image.jpeg" alt="A picture of a cat" />
+</picture>
+```
+
+This will detect whether or not browser support exists for WebP and then use that in place of the jpeg if the format is supported (the jpeg, in this instance, would not be downloaded at all). The `picture` element also has [near universal browser support](https://caniuse.com/picture).
+
+## Relevant Links
+
+- ["Can I use..." entry for WebP](https://caniuse.com/webp)
+- [MDN article on WebP](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types#webp)
+- [WebP Home Page](https://developers.google.com/speed/webp)

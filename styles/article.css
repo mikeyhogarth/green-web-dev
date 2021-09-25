@@ -1,3 +1,23 @@
 article h1:first-of-type {
   @apply text-5xl pt-6;
 }
+
+/**
+Prompt Overviews
+*/
+article dl.prompt-overview {
+  @apply block pb-6;
+}
+
+article dl.prompt-overview dd,
+article dl.prompt-overview dt {
+  @apply inline-block;
+}
+
+article dl.prompt-overview dt {
+  @apply font-bold pr-2;
+}
+
+article dl.prompt-overview dd {
+  @apply block mb-2 md:mb-0 md:inline-block pr-8;
+}

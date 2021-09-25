@@ -2,8 +2,11 @@ import { getContentPage, getContentPages } from "../../utils/file.utils";
 import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import Link from "next/link";
+import capitalize from "lodash/capitalize";
 
 export default function Cue({ source, data }: any) {
+  const { status, category, difficulty } = data;
+
   return (
     <>
       <Link href="/prompts">
@@ -11,6 +14,15 @@ export default function Cue({ source, data }: any) {
       </Link>
       <article>
         <h1>{data.title}</h1>
+        <dl className="prompt-overview">
+          <dt>Status</dt>
+          <dd>{capitalize(status)}</dd>
+          <dt>Category</dt>
+          <dd>{capitalize(category)}</dd>
+          <dt>Difficulty</dt>
+          <dd>{capitalize(difficulty)}</dd>
+        </dl>
+        <hr className="pb-8" />
         <MDXRemote {...source} />
       </article>
     </>
