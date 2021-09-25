@@ -4,6 +4,8 @@ import { serialize } from "next-mdx-remote/serialize";
 import Link from "next/link";
 import { FaCalendarDay } from "react-icons/fa";
 import { enrichData } from "../../utils/article.utils";
+import Head from "next/head";
+import HtmlHead from "../../components/HtmlHead";
 
 interface MetaData {
   title: string;
@@ -22,6 +24,9 @@ export default function Article({ source, data }: Props) {
 
   return (
     <>
+      <Head>
+        <HtmlHead title="Green Web Dev :: Article" description={title} />
+      </Head>
       <Link href="/articles">
         <a>Back to articles</a>
       </Link>

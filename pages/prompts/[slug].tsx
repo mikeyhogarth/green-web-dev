@@ -4,11 +4,17 @@ import { serialize } from "next-mdx-remote/serialize";
 import Link from "next/link";
 import capitalize from "lodash/capitalize";
 
+import Head from "next/head";
+import HtmlHead from "../../components/HtmlHead";
+
 export default function Cue({ source, data }: any) {
   const { status, category, difficulty } = data;
 
   return (
     <>
+      <Head>
+        <HtmlHead title="Green Web Dev :: Prompt" description={data.title} />
+      </Head>
       <Link href="/prompts">
         <a>Back to prompts</a>
       </Link>

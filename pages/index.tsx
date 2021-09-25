@@ -1,14 +1,17 @@
 import Head from "next/head";
 import Link from "next/link";
+import HtmlHead from "../components/HtmlHead";
+
 import { FaLightbulb, FaBookReader, FaTree } from "react-icons/fa";
 
 export default function Home() {
   return (
     <>
       <Head>
-        <title>Green Web Dev</title>
-        <meta name="description" content="Green Web Dev" />
-        <link rel="icon" href="/favicon.ico" />
+        <HtmlHead
+          title="Green Web Dev"
+          description="Practical advice for creating sustainable web applications"
+        />
       </Head>
 
       <div className="pb-10">
