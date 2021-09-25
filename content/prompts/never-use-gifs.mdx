@@ -1,0 +1,36 @@
+---
+title: Don't use GIFs
+category: images
+difficulty: easy
+status: draft
+---
+
+Use an MP4 and the `video` tag instead of GIFs. The file size of GIFs can become extremely large even for very short videos - the same effect can be produced simply by using an MP4 video and setting a few attributes to ensure the video loops, is muted and autoplays. The following image is not a GIF!
+
+<div className="text-center">
+  <video autoPlay loop muted playsInline className="inline-block mt-5 mb-10">
+    <source src="/media/malcom.mp4" type="video/mp4" />
+  </video>
+</div>
+
+```
+<video autoplay loop muted playsinline>
+  <source src="/media/malcom.mp4" type="video/mp4" />
+</video>
+```
+
+The only way the user would ever be aware that this was a video is if they were to right click the image (at which point, they might be thankful of all the cool new features that they now have, such as the ability to rewind and "cast" the video to other devices).
+
+The video above was previously a GIF and was almost 2MB in size. Using an online converter to convert the file into an MP4 video resulted in a size of less than 100k. Not only that, but unlike a GIF the video content will be _streamed_ to the user, meaning that if this was a particularly long video then the user would only pay for the amount they actually watch rather than having to download the whole thing.
+
+Other things to consider;
+
+- Why not leave the video controls on? Let the user initiate the video playing.
+- Multiple [other video formats](https://en.wikipedia.org/wiki/HTML5_video#Supported_video_and_audio_formats) are supported.
+
+## Relevant Links
+
+- ["Can I use..." entry for video](https://caniuse.com/video)
+- ["Can I use..." entry for mp4](https://caniuse.com/mpeg4)
+- [MDN article on the video tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video)
+- [Smashing Magazine: GIF to Video](https://www.smashingmagazine.com/2018/11/gif-to-video/)

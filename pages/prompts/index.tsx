@@ -22,7 +22,7 @@ export default function Articles({ categories, prompts }: Props) {
       </Head>
       <h1>Prompts</h1>
       {categories.map((category) => (
-        <>
+        <section key={category}>
           <h3>{capitalize(category)}</h3>
           <ul>
             {prompts
@@ -37,7 +37,7 @@ export default function Articles({ categories, prompts }: Props) {
                 </li>
               ))}
           </ul>
-        </>
+        </section>
       ))}
     </div>
   );
