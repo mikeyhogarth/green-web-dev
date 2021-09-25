@@ -6,8 +6,8 @@ import Link from "next/link";
 export default function Cue({ source, data }: any) {
   return (
     <>
-      <Link href="/cues">
-        <a>Back to cues</a>
+      <Link href="/prompts">
+        <a>Back to prompts</a>
       </Link>
       <article>
         <h1>{data.title}</h1>
@@ -19,7 +19,7 @@ export default function Cue({ source, data }: any) {
 
 export async function getStaticProps({ params }: any) {
   const { content, data } = await getContentPage(
-    "cues",
+    "prompts",
     params?.slug?.toString() || ""
   );
 
@@ -34,7 +34,7 @@ export async function getStaticProps({ params }: any) {
 }
 
 export async function getStaticPaths() {
-  const pages = await await getContentPages("cues");
+  const pages = await await getContentPages("prompts");
   const paths = pages.map(({ slug }) => ({ params: { slug } }));
 
   return {

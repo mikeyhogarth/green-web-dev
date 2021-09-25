@@ -16,7 +16,7 @@ export default function Header() {
             <NavLink href="/about" padRight={true} text="About" />
           </li>
           <li className="inline-block">
-            <NavLink href="/cues" padRight={true} text="Cues" />
+            <NavLink href="/prompts" padRight={true} text="Prompts" />
           </li>
           <li className="inline-block">
             <NavLink href="/articles" padRight={true} text="Articles" />

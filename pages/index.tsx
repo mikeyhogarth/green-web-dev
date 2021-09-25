@@ -15,58 +15,57 @@ export default function Home() {
           Practical advice for creating{" "}
           <span className="text-primary">sustainable</span> web applications.
           <aside className="text-2xl py-5 text-gray-400 font-light">
-            Vestibulum non mauris porttitor, facilisis ante vel, vehicula eros.
-            Vestibulum consequat felis lacus, eu mollis augue suscipit pulvinar.
+            Tips for keeping the carbon footprint of your website or application
+            to a minimum, written by web developers, for web developers.
           </aside>
         </h2>
         <nav className="text-center md:text-left my-6">
           <Link href="/about">
             <a className="btn btn-primary inline-block md:mr-4">Learn More</a>
           </Link>
-          <Link href="/cues">
+          <Link href="/prompts">
             <a className="hidden md:inline-block btn btn-secondary">
-              Browse Cues
+              Browse Prompts
             </a>
           </Link>
         </nav>
       </div>
       <hr className="mb-8" />
       <div className="md:flex w-full text-center">
-        <div className="flex-grow p-4  ">
+        <div className="flex-grow p-4 md:w-1/3">
           <span className="material-icons text-6xl text-primary">
             lightbulb
           </span>
-          <h3 className="text-xl mt-4 text-primary font-bold">Cues</h3>
+          <h3 className="text-xl mt-4 text-primary font-bold">Prompts</h3>
           <p>
-            Vestibulum non mauris porttitor, facilisis ante vel, vehicula eros.
-            Vestibulum consequat felis lacus, eu mollis augue suscipit pulvinar.
+            Numerous prompts, ideas and inspiration to help you keep your page
+            weight to a minimum.
           </p>
-          <Link href="/cues">
-            <a>Get Ideas</a>
+          <Link href="/prompts">
+            <a>Browse Prompts</a>
           </Link>
         </div>
-        <div className="flex-grow md:mx-2 p-4 ">
+        <div className="flex-grow md:mx-2 p-4 md:w-1/3">
           <span className="material-icons text-6xl text-primary">
             menu_book
           </span>
           <h3 className="text-xl mt-4 text-primary font-bold">Articles</h3>
           <p>
-            Vestibulum non mauris porttitor, facilisis ante vel, vehicula eros.
-            Vestibulum consequat felis lacus, eu mollis augue suscipit pulvinar.
+            Guides and deep-dives covering a myriad of sustainability topics.
           </p>
           <Link href="/articles">
             <a>Read Articles</a>
           </Link>
         </div>
-        <div className="md:flex-grow p-4 ">
+        <div className="flex-grow p-4 md:w-1/3">
           <span className="material-icons text-6xl text-primary">park</span>
           <h3 className="text-xl mt-4 text-primary font-bold">Impact</h3>
           <p>
-            Vestibulum non mauris porttitor, facilisis ante vel, vehicula eros.
-            Vestibulum consequat felis lacus, eu mollis augue suscipit pulvinar.
+            The digital industry are in a unique position to have global impact
+            on climate change.
           </p>
           <Link href="/tldr">
-            <a>If you do one thing...</a>
+            <a>If you read one thing, read this!</a>
           </Link>
         </div>
       </div>

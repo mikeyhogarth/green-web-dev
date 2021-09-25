@@ -2,27 +2,27 @@ import Head from "next/head";
 import Link from "next/link";
 import { getContentPages } from "../../utils/file.utils";
 
-interface Cue {
+interface Prompt {
   content: string;
   slug: string;
   data: any;
 }
 
 interface Props {
-  cues: Cue[];
+  prompts: Prompt[];
 }
 
 export default function Articles(props: Props) {
   return (
     <div>
       <Head>
-        <title>Green Web Dev :: Cues</title>
+        <title>Green Web Dev :: Prompts</title>
       </Head>
-      <h1>Cues</h1>
+      <h1>Prompts</h1>
       <ul>
-        {props.cues.map((a) => (
+        {props.prompts.map((a) => (
           <li key={a.slug}>
-            <Link href={`/cues/${a.slug}`}>
+            <Link href={`/prompts/${a.slug}`}>
               <a>{a.data.title}</a>
             </Link>
           </li>
@@ -33,6 +33,6 @@ export default function Articles(props: Props) {
 }
 
 export async function getStaticProps() {
-  const cues = await getContentPages("cues");
-  return { props: { cues } };
+  const prompts = await getContentPages("prompts");
+  return { props: { prompts } };
 }
