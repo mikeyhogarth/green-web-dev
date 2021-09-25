@@ -5,26 +5,17 @@ difficulty: easy
 status: draft
 ---
 
-[WebP](https://developers.google.com/speed/webp) is a next-generation image format and successor to earlier formats such as JPEGs, PNGs and GIFs. The WebP format offers [25-35% compression](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types#webp) over JPEGs and PNG formats and is supported by all major browsers. The WebP format includes support for;
+Defer the loading of images until they are within the users viewport. This avoids having to pay a data cost for an image that the user may never even see.
 
-- Animation
-- Lossless and Lossy formats
-- Transparency
-
-Conversion from other formats into WebP will almost always result in a reduction in size without having to compromise on quality, and there are a number of tools out there which can handle the conversion for you, such as [ImageMagick](https://imagemagick.org/script/webp.php) and the [cwebp Command Line Tool](https://developers.google.com/speed/webp/docs/precompiled).
-
-## Compatibility
-
-Whilst WebP is supported by most modern browsers, you may still want to include a fallback format in case you want to cater for older browsers. You can use the HTML `picture` element for this purpose. The following code;
+This functionality was historically quite fiddly to get working and required an understanding of JavaScript, however it is now **natively supported** across [all major browsers](https://caniuse.com/loading-lazy-attr) and requires no programming knowledge at all. Simply set the `loading` attribute to `"lazy"` on the `img` tag;
 
 ```
-<picture>
-  <source srcset="/my-image.webp" type="image/webp" />
-  <img src="my-image.jpeg" alt="A picture of a cat" />
-</picture>
+<img loading="lazy" src="/foobar.jpg" alt="bar baz" />
 ```
 
-Will detect whether or not browser support exists for WebP and then use that in place of the jpeg if the format is supported (the jpeg, in this instance, would not be downloaded at all).
+This will ensure that the request for this image (and thus any data cost) is only paid when the user scrolls to a point where they can actually see the image. This is perfectly compatible with screen readers and also works for `iframes`.
+
+The functionality will degrade gracefully into older browsers, so there is very little reason not to use this funcitonality.
 
 ## Relevant Links
 
