@@ -58,11 +58,11 @@ export default function Home() {
           <FaTree className="inline-block text-6xl text-primary" />
           <h3 className="text-xl mt-4 text-primary font-bold">Impact</h3>
           <p>
-            The digital industry are in a unique position to have global impact
-            on climate change.
+            The digital industry are in a unique position to create global
+            impact on climate change if we put our minds to it.
           </p>
           <Link href="/tldr">
-            <a>If you read one thing, read this!</a>
+            <a>If you read one thing, read this</a>
           </Link>
         </div>
       </div>
