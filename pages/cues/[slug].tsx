@@ -7,12 +7,12 @@ export default function Cue({ source, data }: any) {
   return (
     <>
       <Link href="/cues">
-        <a>Cues</a>
+        <a>Back to cues</a>
       </Link>
-      &rarr;
-      <span>{data.title}</span>
-      <h1>{data.title}</h1>
-      <MDXRemote {...source} />
+      <article>
+        <h1>{data.title}</h1>
+        <MDXRemote {...source} />
+      </article>
     </>
   );
 }
