@@ -5,7 +5,7 @@ difficulty: easy
 status: draft
 ---
 
-Defer the loading of images until they are within the users viewport. This avoids having to pay a data cost for an image that the user may never even see.
+Defer the loading of images until they are within the users viewport. This avoids having to pay the data cost for an image that the user may never even see.
 
 This functionality was historically quite fiddly to get working and required an understanding of JavaScript, however it is now **natively supported** across [all major browsers](https://caniuse.com/loading-lazy-attr) and requires no programming knowledge at all. Simply set the `loading` attribute to `"lazy"` on the `img` tag;
 
@@ -13,9 +13,9 @@ This functionality was historically quite fiddly to get working and required an 
 <img loading="lazy" src="/foobar.jpg" alt="bar baz" />
 ```
 
-This will ensure that the request for this image (and thus any data cost) is only paid when the user scrolls to a point where they can actually see the image. This is perfectly compatible with screen readers and also works for `iframes`.
+This will ensure that the request for this image is only sent when the user scrolls to a point where they can actually see the image. This is perfectly compatible with screen readers and also works for `iframes`.
 
-The functionality will degrade gracefully into older browsers, so there is very little reason not to use this funcitonality.
+The functionality will degrade gracefully into older browsers, so there is very little reason not to take advantage of it.
 
 ## Relevant Links
 
