@@ -8,6 +8,7 @@ import { enrichData } from "../../utils/article.utils";
 interface MetaData {
   title: string;
   date?: string;
+  author?: string;
   formattedDate?: string;
 }
 
@@ -17,7 +18,7 @@ interface Props {
 }
 
 export default function Article({ source, data }: Props) {
-  const { title, date, formattedDate } = data;
+  const { author, title, date, formattedDate } = data;
 
   return (
     <>
@@ -28,7 +29,7 @@ export default function Article({ source, data }: Props) {
         <h1 className="font-bold">{title}</h1>
         <p className="text-gray-500">
           <FaCalendarDay className="inline-block relative mr-2 -top-1" />
-          Published <time dateTime={date}>{formattedDate}</time>
+          Published <time dateTime={date}>{formattedDate}</time> by {author}
         </p>
         <hr className="pb-8" />
         <MDXRemote {...source} />

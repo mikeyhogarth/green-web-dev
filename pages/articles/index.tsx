@@ -19,12 +19,15 @@ export default function Articles(props: Props) {
         <title>Green Web Dev :: Articles</title>
       </Head>
       <h1>Articles</h1>
-      <ul>
+      <ul className="list-none">
         {props.articles.map((a) => (
-          <li key={a.slug}>
+          <li className="pb-6 ml-0" key={a.slug}>
             <Link href={`/articles/${a.slug}`}>
-              <a>{a.data.title}</a>
+              <a className="text-2xl">{a.data.title}</a>
             </Link>
+            <p className="text-xs">
+              {a.data.date} by {a.data.author}
+            </p>
           </li>
         ))}
       </ul>
