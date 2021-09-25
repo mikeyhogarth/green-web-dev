@@ -1,0 +1,20 @@
+table {
+  @apply w-full mt-6 mb-6;
+}
+
+table tr th,
+table tr td {
+  @apply p-2 text-left;
+}
+
+table tr {
+  @apply hover:bg-gray-100;
+}
+
+table tr th {
+  @apply font-bold bg-primary text-white border border-primary;
+}
+
+table tr td {
+  @apply border border-secondary;
+}
