@@ -1,5 +1,6 @@
 import React from "react";
 import { FaGithub, FaTwitter } from "react-icons/fa";
+import Image from "next/image";
 
 const Footer = () => {
   return (
@@ -16,7 +17,10 @@ const Footer = () => {
           Icon={FaTwitter}
         />
       </div>
-      <p>Green Web Dev &copy;{new Date().getFullYear()}</p>
+      <p>
+        Green Web Dev &copy;{new Date().getFullYear()} - Page Weight Budget
+        350KB
+      </p>
     </footer>
   );
 };
