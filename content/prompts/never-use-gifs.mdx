@@ -5,13 +5,14 @@ difficulty: easy
 status: draft
 ---
 
-Use an MP4 and the `video` tag instead of GIFs. The file size of GIFs can become extremely large even for very short videos - the same effect can be produced simply by using an MP4 video and setting a few attributes to ensure the video loops, is muted and autoplays. The following image is not a GIF!
+Use an MP4 and the `video` tag instead of GIFs. The file size of GIFs can become extremely large even for very short videos - the same effect can be reproduced simply by using a much smaller MP4 video and setting a few attributes to ensure the video loops, is muted and autoplays. The following image is not a GIF!
 
 <div className="text-center">
-  <video autoPlay loop muted playsInline className="inline-block mt-5 mb-10">
+  <video autoPlay loop muted playsInline className="inline-block mt-5">
     <source src="/media/video/malcom.mp4" type="video/mp4" />
   </video>
 </div>
+<br />
 
 ```
 <video autoplay loop muted playsinline>
@@ -19,11 +20,11 @@ Use an MP4 and the `video` tag instead of GIFs. The file size of GIFs can become
 </video>
 ```
 
-The only way the user would ever be aware that this was a video is if they were to right click the image, at which point they might be thankful for all the cool new features that they now have such as the ability to pause and rewind, or to "cast" the video to other devices.
+The only way the user would ever be aware that this was a video is if they were to right click it, at which point they might be thankful for all the cool new features that they now have such as the ability to pause and rewind, go full-screen or even to "cast" the video to other devices.
 
-The video above was previously a GIF 2MB in size. Using an [online converter](https://cloudconvert.com/gif-to-mp4) to convert the file into an MP4 video resulted in a size of less than 100k. In addition to this, video content will be _streamed_ to the user as opposed to being downloaded entirely up front like a GIF. This means that then the user would only pay the data cost for the amount of the video they actually watched.
+The video above had previously been a GIF almost 2MB in size. Using an [online converter](https://cloudconvert.com/gif-to-mp4) to convert the file into an MP4 video resulted in a size of less than 100k. In addition, video content will be _streamed_ to the user as opposed to being downloaded entirely up front like a GIF. This means that then the user would only pay the data cost for the amount of the video they actually watched.
 
-It is worth noting that **MP4 Videos do not support transparency** like GIFs do - however, if transparency is the goal then consider a modern format with better compression, such as WebP or AVIF.
+It is worth noting that **MP4 Videos do not support transparency** like GIFs do - however, if transparency is the goal then consider a modern format with better compression such as WebP or AVIF, both of which support animation and transparency.
 
 Other things to consider;
 
