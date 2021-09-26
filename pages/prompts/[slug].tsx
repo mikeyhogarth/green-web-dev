@@ -6,7 +6,7 @@ import capitalize from "lodash/capitalize";
 import Head from "next/head";
 import HtmlHead from "../../components/HtmlHead";
 
-export default function Cue({ source, data }: any) {
+export default function Cue({ source, data, slug }: any) {
   const { status, category, difficulty } = data;
 
   return (
@@ -29,6 +29,20 @@ export default function Cue({ source, data }: any) {
         </dl>
         <hr className="pb-8" />
         <MDXRemote {...source} />
+        <div className="bg-secondary text-primary p-4">
+          <p className="mb-0">
+            Spotted a typo, mistake or enhancement? Help to improve this content
+            by{" "}
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href={`https://github.com/mikeyhogarth/green-web-dev/blob/main/content/prompts/${slug}.mdx`}
+            >
+              editing it on github
+            </a>
+            .
+          </p>
+        </div>
       </article>
     </>
   );
@@ -46,6 +60,7 @@ export async function getStaticProps({ params }: any) {
     props: {
       source,
       data,
+      slug: params.slug,
     },
   };
 }
