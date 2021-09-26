@@ -1,0 +1,40 @@
+---
+title: Resize images appropriately
+category: images
+difficulty: easy
+status: draft
+---
+
+Don't serve images that are bigger than they need to be. The bigger the image, the bigger the file which ultimately will result in more data being sent over the wire. If possible, you should **pre-resize the image** on the server so that the user only downloads the appropriately sized image.
+
+It is very common in web development to resize images within the browser to dimensions that are much smaller than the dimensions of the image file itself - this can be done through CSS or by using the `width` and `height` attributes on an image tag. At best, this just means a few hundred pixels here and there to help an image fit within a given design layout... but at its worst, images that are thousands of pixels in size are used for things like thumbnails. This forces users to pay the data cost of downloading an image they may never see the full-sized version of and depending on the image format you are using, that cost can be quite steep.
+
+This goes doubly so for mobile devices, where not only are screens smaller (and thus require smaller images) but where users might also be on expensive data plans or may be in areas where connections are spotty or slow.
+
+## Resizing images
+
+Resizing images does not need to be a tedious manual task - if you are able to identify the images on your server which are bigger than they need to be, you can automate the process. There are tons of tools out ther that can help you do this, such as [ImageMagick](https://imagemagick.org/index.php) which makes resizing images as easy as;
+
+```
+convert person.jpg -resize 64x64 person_thumb.jpg
+```
+
+Imagemagick also includes a command called `mogrify`, which is similar to the `convert` command above but can work on batches of images.
+
+## Handling different sizes for different viewports
+
+If you know that your users screen is only 500 pixels wide then you probably don't need to serve them huge image files. It used to be the case that there was no decent solution to this issue, however this is not the case today. The HTML5 `picture` element can be used in conjunction with media queries to ensure that only appropriately sized images are requested;
+
+```
+<picture>
+    <source srcset="/foo_500.jpg" media="(min-width: 500px)">
+    <img src="/foo.jpg" alt="Bar" />
+</picture>
+```
+
+The picture element is [widely supported across all major browsers](https://caniuse.com/picture). You can take this as far as you want to - screen widths can vary significantly between devices but mobile phones typically don't have a screen width greater than 450 pixels at time of writing. Most modern browser developer tools allow you to [simulate mobile devices](https://developer.chrome.com/docs/devtools/device-mode/), allowing you to test the functionality without needing a device yourself.
+
+## Relevant Links
+
+- ["Can I use..." entry for the picture tag](https://caniuse.com/picture)
+- ["Imagemagick Home page"](https://imagemagick.org/index.php) - a tool for resizing images
