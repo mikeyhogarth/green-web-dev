@@ -12,7 +12,10 @@ export default function Cue({ source, data, slug }: any) {
   return (
     <>
       <Head>
-        <HtmlHead title="Green Web Dev :: Prompt" description={data.title} />
+        <HtmlHead
+          title={`Green Web Dev :: ${data.title}`}
+          description={data.title}
+        />
       </Head>
       <Link href="/prompts">
         <a>Back to prompts</a>
@@ -29,7 +32,7 @@ export default function Cue({ source, data, slug }: any) {
         </dl>
         <hr className="pb-8" />
         <MDXRemote {...source} />
-        <div className="bg-secondary text-primary p-4">
+        <div className="bg-secondary text-primary p-4 px-8 mt-10">
           <p className="mb-0">
             Spotted a typo, mistake or enhancement? Help to improve this content
             by{" "}

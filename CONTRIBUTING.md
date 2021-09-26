@@ -10,12 +10,15 @@ Before spending any significant time on any contribution, [raise an issue on our
 
 Prompts should be quick, digestible bits of advice that can help reduce the carbon footprint of a web application, generally this will either be through reducing CPU cycles or reducing data usage by a significant amount.
 
+There are a myriad of ways to save data and CPU cycles so any prompts should be fairly wide-reaching/widely applicable and broad. We don't want to end up just listing every single way to make your code more efficient or we'll be here forever!
+
 A prompt **Should** have the following properties;
 
 - It should be completely readable in less than 2 minutes
 - The first sentence should be a statement which summarises the entire prompt.
 - Where applicable, the prompt should include good examples and bad examples.
-- The prompt should end with some useful links for futher reading
+- Where applicable, [caniuse](https://caniuse.com/) links should be provided.
+- The prompt should end with some useful links for futher reading, allowing the user to continue investigating the topic should they want to.
 
 A prompt **Should Not** have the following properties;
 
