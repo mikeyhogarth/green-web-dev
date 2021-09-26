@@ -5,7 +5,14 @@ difficulty: easy
 status: draft
 ---
 
-Choose a browser support strategy that is sustainable.
+Choose a browser support strategy that is sustainable. At the most basic level, this should include a commitment to support the most modern versions of each browser and a "cut off" point for when you stop supporting older versions of a particular browser - where that cut-off point lies is up to you - the main crux of this prompt is simply to "have a strategy".
+
+There are a few sustainability angles to this;
+
+- Older browsers don't support sustainable techniques.
+- Some browsers are more memory-intensive / power hungry than others.
+
+The following sections go into more detail on each of these.
 
 ## Older browsers lack support for sustainable techniques
 
@@ -19,7 +26,7 @@ All that said - you are not doing your customers any favours by helping them con
 
 You have a few options;
 
-- Simply refuse to serve customers using older browsers.
+- Simply refuse to serve customers using older browsers (This may not be an option for you commercially).
 - Continue to cater for these users, but encourage them to upgrade their browser. There are [tools out there](https://browser-update.org/) to help you do this.
 
 ## Don't force users to use a particular browser
@@ -27,3 +34,7 @@ You have a few options;
 So often in industry we see company websites that advise users to use a particular brand of browser for "the best experience". In some instances, this comes from a good place: encouraging customers to upgrade and use the most modern browsers. Tooling and algorithms are always striving to be more efficient so modern tooling usually means a longer battery life and a better user experience.
 
 In other cases though, developers will instead force users down the path of using a particular browser purely so they don't have to support the others. Wihlst this might lead to an increase in productivity, you need to weight this against the fact that you may be forcing users to use browsers that are more memory hungry (and power hungry) than their lighter alternatives. Chrome, for example, is an excellent browser but is frequently [called out as being very memory hungry](https://www.makeuseof.com/tag/chrome-using-much-ram-fix-right-now/). By forcing your customers to use a particular browser, you may also be forcing them to use more of their laptop batteries.
+
+## Relevant Links
+
+- [Can I use?](https://caniuse.com/) - the ultimate guide to whether a technique can or cannot be used in a particular browser.
