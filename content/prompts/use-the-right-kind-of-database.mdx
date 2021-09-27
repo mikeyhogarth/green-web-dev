@@ -1,0 +1,29 @@
+---
+title: Use the right kind of database
+category: backend
+difficulty: hard
+status: draft
+---
+
+Choose the correct type of database for the job you are doing. By simply defaulting to a popular or familiar database, you may be missing the opportunity to optimise metrics such as data size and CPU usage, subsequently increasing your carbon footprint.
+
+For many years, SQL based databases such as Postgres, SQL Server and MySQL dominated the online database conversation. As the web matured, it became apparent that this paradigm was not suitable for all use cases. Over time, certain patterns emerged which were common enough to have databases specifically built around specific use cases. Examples of modern database paradigms include;
+
+| Database Type  | Examples                    | Use for                                                            |
+| -------------- | --------------------------- | ------------------------------------------------------------------ |
+| Relational     | Postgres, MySQL, SQL Server | Traditional information systems with unpredictable access patterns |
+| Key-Value      | Redis, memcached            | Caching, Queues, Leaderboards                                      |
+| Document Store | MongoDB, Elasticsearch      | Semi-structured document-oriented data                             |
+| Graph Database | Neo4J                       | Fraud Detection, Recommendation Engines, highly relational data    |
+
+The decision around which one to use is highly case-specific, but the core principle is **Not to just default to the one you know**. Look at your requirements and choose a database based on those - do some research, see how other people solve your particular problem. Think about whether things like **high-availability** or **burst-traffic scalability** are goals you are aiming for (in which case, SQL might not be the right choice for you due to its inability to scale) or whether or not you can figure out all of your access patterns up front (if you can't, SQL probably _is_ the right choice due to its flexibility).
+
+It's also about making your own life easier. Whilst you _could_ model graph data within a SQL, you would end up writing a lot of code to manage graph based queries which would have been provided for you out of the box if you'd chosen a graph database to begin with. You are likely to end up spending a lot more time than you need to, and the algorithms you come up with are unlikely to be as efficient as the ones provided by a database that was purpose built for a particular task.
+
+Certain database paradigms also open up the opportunity for serverless architecture - [AWS DynamoDB](https://aws.amazon.com/dynamodb/) and [Azure CosmosDB](https://docs.microsoft.com/en-us/azure/cosmos-db/introduction) are both highly scalable NOSQL databases that offer serverless, consumption-based plans - this means you only pay for what you use and therefore haven't got a database server running 24/7, burning electricity, when you're not even using it.
+
+## Relevant Links
+
+- [Databases on Azure](https://azure.microsoft.com/en-gb/product-categories/databases/)
+- [Databases on AWS](https://aws.amazon.com/products/databases/)
+- [Databases on Google Cloud](https://cloud.google.com/products/databases)
