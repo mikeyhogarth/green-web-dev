@@ -8,14 +8,14 @@ export default function Header() {
   return (
     <>
       <header className="bg-primary text-white md:flex md:flex-row">
-        <h1 className="px-5 lg:px-20 xl:px-40 md:self-center md:tracking-widest md:min-w-max font-typewriter font-bold md:text-4xl py-5 mb-0">
+        <h1 className="px-5 lg:px-20 xl:px-40 self-center md:tracking-widest md:min-w-max font-typewriter font-bold text-2xl md:text-4xl py-5 mb-0">
           <Link href="/">
             <a className="mr-5">Green web dev</a>
           </Link>
 
           <button
             aria-label="Open Menu"
-            className="float-right md:hidden"
+            className="float-right md:hidden self-center mt-1"
             onClick={(e) => setOpen(!open)}
           >
             <FaBars className="" />
