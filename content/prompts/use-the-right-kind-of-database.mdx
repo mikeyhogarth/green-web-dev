@@ -7,7 +7,7 @@ status: draft
 
 Choose the correct type of database for the job you are doing. By defaulting to popular or familiar database types, you may be missing the opportunity to optimise metrics such as data size and CPU usage, subsequently increasing your carbon footprint.
 
-For many years, SQL based databases such as Postgres, SQL Server and MySQL have dominated the online database conversation. As the web has matured, certain patterns emerged and it became apparent that this paradigm was not suitable for all use cases. Eventually these patterns became common enough to spawn databases specifically built around their use cases.
+For many years, SQL based databases such as Postgres, SQL Server and MySQL have dominated the online database conversation. As the web has matured, certain patterns emerged and it became apparent that SQL was not suitable for all use cases. Eventually these patterns became common enough to spawn database architectures specifically built around those use cases.
 
 Examples of modern database paradigms include;
 
@@ -18,9 +18,9 @@ Examples of modern database paradigms include;
 | Document Store | MongoDB, Elasticsearch      | Semi-structured document-oriented data                             |
 | Graph Database | Neo4J                       | Fraud Detection, Recommendation Engines, highly relational data    |
 
-The decision around which database to use is highly case-specific, but the core principle is **not to simply default to the popular or familiar choice**. Look at your requirements and choose a database based on those - this might involve doing some research to see how other people solve your particular problem. Think about whether things like **high-availability** or **burst-traffic scalability** are important to you (in which case, SQL might not be the best choice due to its inability to scale easily) or whether or not you can figure out all of your access patterns up front (if you can't, SQL probably _is_ a good choice due to its flexibility).
+The decision around which database to use is highly case-specific, but the core principle is **not to simply default to the popular or familiar choice**. Look at your requirements and choose a database based on those - this might involve doing some research to see how other people solve your particular problem. Think about whether things like **high-availability** or **burst-traffic scalability** are important to you (in which case, SQL might not be the best choice due to its inability to scale easily) or whether or not you can identify all of your access patterns up front (and if not, SQL probably _is_ a good choice due to its flexibility).
 
-Even within each database paradigm **there are decisions to be made** around which product to use which might prompt more research. In the case of Key-Value databases for example, there are important differences between [Redis](https://en.wikipedia.org/wiki/Redis) and [memcached](https://en.wikipedia.org/wiki/Memcached);
+Even within each database paradigm there are decisions to be made around **which product to use**, prompting more research. In the case of Key-Value databases for example, there are important differences between [Redis](https://en.wikipedia.org/wiki/Redis) and [memcached](https://en.wikipedia.org/wiki/Memcached) that might make you choose one over the other;
 
 - Redis allows you to persist your data to disk (memcached cannot do this without plugins).
 - Memcached is multithreaded, allowing you to handle more operations at once on multi core computers.
