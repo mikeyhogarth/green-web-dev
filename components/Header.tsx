@@ -64,7 +64,7 @@ function NavLink({ href, text, supressBorder, setOpen }: NavlinkProps) {
       <Link href={href}>
         <a
           className={
-            "block md:inline my-2 md:my-0 md:border-white md:ml-4" + classes
+            "block md:inline my-2 md:my-0  md:border-white md:ml-4 " + classes
           }
           onClick={() => setOpen(false)}
         >
