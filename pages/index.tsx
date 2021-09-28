@@ -65,7 +65,7 @@ export default function Home() {
             As members of the digital industry, we are in a unique position to
             create global impact on climate change.
           </p>
-          <Link href="/tldr">
+          <Link href="/adopt-a-data-budget">
             <a>If you read one thing, read this</a>
           </Link>
         </div>
