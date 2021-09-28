@@ -1,0 +1,52 @@
+---
+title: Adopt a data budget
+category: general
+difficulty: easy
+status: draft
+---
+
+Have a data budget and stick to it. Research such as the [lean ITC report](https://theshiftproject.org/wp-content/uploads/2019/03/Lean-ICT-Report_The-Shift-Project_2019.pdf) by [Shift Project](https://theshiftproject.org/en/home/) show a direct correlation between the amount of data an application uses and the amount of carbon it generates, however as developers we seldom pay much notice to how much data we are using until it starts to affect our application's performance. This is mostly because we are living in the age of plenty from a data perspective - storage is cheap and we have no incentive to reduce the amount of data we are sending over the wire.
+
+However - frame this through a sustainability lens and things change: as pointed out elsewhere on this site - the carbon footprint of our applications is directly proportional to visitor numbers, meaning that one smart decision by us can translate into massive carbon savings for our application, with the added bonus that it'll be faster for our users and probably cost us less too. Most of the other prompts on this site hang off the central principle of using less data - **get this one thing right, and the rest looks after itself!**
+
+We're using the term **data budget** here to cover any situation where you can put a limit on the amount of data you are using - but the most common place this metrics will manifest itself is in what people call the "page weight" - that is, the number of KB that is downloaded when you render a page. That said, you can apply this term to any place in your application where data is being sent over the wire (e.g. you might have some back-end processes that the user never sees, but where you can still calculate data usage and set a budget).
+
+There are many tools out there that you can use to show the exact carbon footprint of your application as it relates to data usage;
+
+- [The Carbonalyser browser extension](https://theshiftproject.org/en/carbonalyser-browser-extension/)
+- [CodeCarbon](https://github.com/mlco2/codecarbon) - track emissions from compute
+- [CO2.js](https://github.com/thegreenwebfoundation/co2.js) - a Javascript library for calculating bytes-to-carbon
+- [Various tools by the green web foundation](https://github.com/thegreenwebfoundation)
+- [NPM Size Limit](https://github.com/ai/size-limit/) - a tool to monitor NPM bundle size limits
+
+These allow you to choose a data budget strategy and then **enforce it through automation** - and doing this needn't be a massive overhead for your team either; Simply install the tooling, check what your current page weight or bundle size is, add 10% and hey presto, you have a budget! You can then work towards reducing that budget or, more importantly, making sure you never go over it without that being a **conscious decision**.
+
+## Setting a page weight
+
+You can find out what the internet average page weight is by using the [page weight report tool](https://httparchive.org/reports/page-weight) from httparchive. It allows you to break down page weights by type and by date - for example, in 2021 the average web page for the top 100,000 sites on the internet came in at around 1700KB, of which 540KB was images and 570KB was Javascript (these two are usually the biggest offenders!). **You can be as granular as you want to be** with your own page weight budgets - either setting a weight limit for the whole page or setting individual budgets for different aspects of the page (such as an image budget, a css budget and so on...)
+
+## Alternative: Set a "story weight"
+
+Sometimes a page weight won't make sense and you might instead want to adopt a 'story weight' for your application, where you total up the page weight of an entire user journey rather than just doing it on a page by page basis. If I was running a shop, for example, I might choose stories (and budgets) like this;
+
+| Story Name                  | Detail                                                            | Budget |
+| --------------------------- | ----------------------------------------------------------------- | ------ |
+| Not what I was looking for! | The user saw the home page and realised it's not what they wanted | 400kb  |
+| Just browsing               | User comes onto the site, checks out several products then leaves | 5MB    |
+| I know what I want          | User comes looking for something specific, finds it, buys it      | 4MB    |
+| I want to talk to someone   | User comes in wanting to ask a question or to complain            | 2MB    |
+
+The upshot of this is that this incentivises development teams to consider user stories if they're not already, and to make your user's journeys through the application as slick as possible. Having a user getting lost within an app and downloading hundreds of bytes worth of images they don't care about is not only bad for the environment, it's also bad for user experience.
+
+## Other considerations
+
+- If your company makes multiple apps, don't mandate company-wide page weight budgets. The nature of apps is such that some will just generate more carbon than others - don't pit them against each other!
+- That said, you can totally gamify this, incentivising teams to shed that page weight! Everyone likes a bit of code golf right? Well this is just carbon golf!
+- The team developing the app should be the one to pick the budget - they know the app best and are in the best place to pick a sensible / realistic budget.
+
+## Relevant Links
+
+- [MDN article about page weight](https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Author_fast-loading_HTML_pages)
+- [Web.dev Performance Budgets 101](https://web.dev/performance-budgets-101/)
+- [HTTPArchive Web Almanac chapter on page weights](https://almanac.httparchive.org/en/2020/page-weight#page-weight)
+- [HTTPArchive Page weight report tool](https://httparchive.org/reports/page-weight) - use this to compare your own page weights to the internet average
