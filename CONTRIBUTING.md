@@ -12,17 +12,16 @@ Prompts should be quick, digestible bits of advice that can help reduce the carb
 
 There are a myriad of ways to save data and CPU cycles so any prompts should be fairly wide-reaching/widely applicable and broad. We don't want to end up just listing every single way to make your code more efficient or we'll be here forever!
 
+The first sentence should **open with a statement that summarises the entire prompt**, followed by the reason that this matters from a carbon / sustainability perspective.
+
+Prompts should not press a developer to sacrifice code quality or maintainability - if quality is a tradeoff for adopting the advice, state this clearly within the prompts somewhere (probably with its own section) - in reality, things like this should probably not be prompts.
+
 A prompt **Should** have the following properties;
 
-- It should be completely readable in less than 2 minutes
-- The first sentence should be a statement which summarises the entire prompt.
+- It should be completely readable in **less than 2 minutes**
 - Where applicable, the prompt should include good examples and bad examples.
 - Where applicable, [caniuse](https://caniuse.com/) links should be provided.
 - The prompt should end with some useful links for futher reading, allowing the user to continue investigating the topic should they want to.
-
-A prompt **Should Not** have the following properties;
-
-- It should not press a developer to sacrifice code quality or maintainability
 
 ## Contributing an Article
 
