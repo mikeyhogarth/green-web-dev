@@ -1,19 +1,10 @@
-import Head from "next/head";
 import Link from "next/link";
-import HtmlHead from "../components/HtmlHead";
 
 import { FaLightbulb, FaBookReader, FaTree } from "react-icons/fa";
 
 export default function Home() {
   return (
     <>
-      <Head>
-        <HtmlHead
-          title="Green Web Dev"
-          description="Practical advice for creating sustainable web applications"
-        />
-      </Head>
-
       <div className="pb-10">
         <h2 className="mt-0 md:mt-10 leading-tight text-3xl md:text-6xl font-bold">
           Practical advice for creating{" "}
@@ -25,7 +16,7 @@ export default function Home() {
         </h2>
         <nav className="text-center md:text-left my-6">
           <Link href="/about">
-            <a className="btn btn-primary inline-block md:mr-4">Learn More</a>
+            <a className="btn btn-primary inline-block md:mr-4">Start Here</a>
           </Link>
           <Link href="/prompts">
             <a className="hidden md:inline-block btn btn-secondary">
@@ -65,7 +56,7 @@ export default function Home() {
             As members of the digital industry, we are in a unique position to
             create global impact on climate change.
           </p>
-          <Link href="/adopt-a-data-budget">
+          <Link href="/prompts/adopt-a-data-budget">
             <a>If you read one thing, read this</a>
           </Link>
         </div>

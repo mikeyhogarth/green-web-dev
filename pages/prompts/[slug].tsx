@@ -3,7 +3,6 @@ import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import Link from "next/link";
 import capitalize from "lodash/capitalize";
-import Head from "next/head";
 import HtmlHead from "../../components/HtmlHead";
 
 export default function Cue({ source, data, slug }: any) {
@@ -11,12 +10,11 @@ export default function Cue({ source, data, slug }: any) {
 
   return (
     <>
-      <Head>
-        <HtmlHead
-          title={`Green Web Dev :: ${data.title}`}
-          description={data.title}
-        />
-      </Head>
+      <HtmlHead
+        title={`Green Web Dev :: ${data.title}`}
+        description={data.title}
+      />
+
       <Link href="/prompts">
         <a>Back to prompts</a>
       </Link>

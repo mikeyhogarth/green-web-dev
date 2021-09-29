@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { getContentPages } from "../../utils/file.utils";
-import Head from "next/head";
 import HtmlHead from "../../components/HtmlHead";
 
 interface Article {
@@ -16,12 +15,11 @@ interface Props {
 export default function Articles(props: Props) {
   return (
     <div>
-      <Head>
-        <HtmlHead
-          title="Green Web Dev :: Articles"
-          description="Deep dive articles about sustainable web dev"
-        />
-      </Head>
+      <HtmlHead
+        title="Green Web Dev :: Articles"
+        description="Deep dive articles about sustainable web dev"
+      />
+
       <h1>Articles</h1>
       <ul className="list-none">
         {props.articles.map((a) => (

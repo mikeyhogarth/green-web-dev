@@ -1,4 +1,3 @@
-import Head from "next/head";
 import Link from "next/link";
 import { getContentPages } from "../../utils/file.utils";
 import capitalize from "lodash/capitalize";
@@ -18,12 +17,11 @@ interface Props {
 export default function Articles({ categories, prompts }: Props) {
   return (
     <div>
-      <Head>
-        <HtmlHead
-          title="Green Web Dev :: Prompts"
-          description="Prompts and tips for creating sustainable web applications"
-        />
-      </Head>
+      <HtmlHead
+        title="Green Web Dev :: Prompts"
+        description="Quick tips and tricks to help reduce the carbon footprint of your website or application"
+      />
+
       <h1>Prompts</h1>
       {categories.map((category) => (
         <section key={category}>
