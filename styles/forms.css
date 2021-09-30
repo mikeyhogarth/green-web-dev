@@ -1,0 +1,8 @@
+label {
+  @apply font-bold mr-2 p-2;
+}
+
+input[type="text"],
+input[type="date"] {
+  @apply p-2 border border-gray-200;
+}
