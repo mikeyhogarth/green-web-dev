@@ -2,7 +2,7 @@
 title: Lazy load images
 category: images
 difficulty: easy
-status: draft
+status: complete
 ---
 
 Defer the loading of images until they are within the active viewport. This avoids paying the data cost for images the user never sees.
@@ -13,7 +13,7 @@ Lazy image loading used to be fiddly to implement, requiring an understanding of
 <img loading="lazy" src="/foobar.jpg" alt="bar baz" />
 ```
 
-This change ensures the request for `foobar.jpg` is only sent if the user scrolls to the image's location. This technique is supported by screen readers, and works within `iframe` tags.
+This change ensures the request for `foobar.jpg` is only sent if the user scrolls to the image's location. This technique is supported by screen readers, and also works for `iframe` tags.
 
 Since this technique will degrade gracefully into older browsers, there is little reason to not use it.
 
