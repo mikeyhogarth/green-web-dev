@@ -19,11 +19,14 @@ const HtmlHead = ({
       />
       <meta property="og:type" content="website" />
       <meta property="og:site_name" content="Green Web Dev" />
+      <meta property="og:image" content="/media/icons/android-chrome-192x192.png" />
+
 
       {/* Twitter tags */}
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:creator" content="@MetalMikey666" />
+      <meta name="twitter:image" content="/media/icons/android-chrome-192x192.png" />
 
       {/* PWA settings and icons */}
       <meta name="theme-color" content="#2E7D32" />
