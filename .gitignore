@@ -12,6 +12,9 @@
 /.next/
 /out/
 
+# PWA
+/public/sw.js 
+
 # production
 /build
 
