@@ -9,7 +9,7 @@ export default function Home() {
         <h2 className="mt-0 md:mt-10 leading-tight text-3xl md:text-6xl font-bold">
           Practical advice for creating{" "}
           <span className="text-primary">sustainable</span> web applications.
-          <aside className="text-2xl py-5 text-gray-400 font-light">
+          <aside className="text-2xl py-5 text-gray-500 font-light">
             Tips and tricks for minimizing the carbon footprint of your website.
             Written and curated by web developers, for web developers.
           </aside>
