@@ -3,7 +3,7 @@ import { FaGithub, FaTwitter } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="text-center p-10 mt-10 bg-gray-100 text-gray-500 border-t">
+    <footer className="text-center p-10 mt-10 bg-gray-100 text-gray-600 border-t">
       <div className="text-center">
         <SocialIcon
           link="https://github.com/mikeyhogarth/green-web-dev"

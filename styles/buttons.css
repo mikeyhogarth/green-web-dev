@@ -1,11 +1,11 @@
 .btn {
-  @apply px-8 py-4 rounded no-underline;
+  @apply px-8 py-4 rounded no-underline border border-primary font-semibold transition-colors hover:no-underline hover:border-highlight;
 }
 
 .btn-primary {
-  @apply bg-primary text-white !important;
+  @apply bg-primary text-white hover:bg-highlight !important;
 }
 
 .btn-secondary {
-  @apply bg-secondary text-primary !important;
+  @apply bg-white  text-primary hover:text-highlight !important;
 }
