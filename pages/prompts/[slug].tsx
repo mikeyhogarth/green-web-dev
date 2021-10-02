@@ -16,10 +16,10 @@ export default function Cue({ source, data, slug }: any) {
       />
 
       <Link href="/prompts">
-        <a>Back to prompts</a>
+        <a className="print:hidden">Back to prompts</a>
       </Link>
       <article>
-        <h1>{data.title}</h1>
+        <h1 className="print:text-3xl">{data.title}</h1>
         <dl className="prompt-overview">
           <dt>Status</dt>
           <dd>{capitalize(status)}</dd>
@@ -30,7 +30,7 @@ export default function Cue({ source, data, slug }: any) {
         </dl>
         <hr className="pb-8" />
         <MDXRemote {...source} />
-        <div className="bg-secondary text-primary p-4 px-8 mt-10">
+        <div className="bg-secondary text-primary p-4 px-8 mt-10 print:hidden">
           <p className="mb-0">
             Spotted a typo, mistake or enhancement? Help to improve this content
             by{" "}
