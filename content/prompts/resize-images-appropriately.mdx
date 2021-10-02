@@ -19,11 +19,11 @@ Resizing images does not need to be a tedious manual task - if you are able to i
 convert person.jpg -resize 64x64 person_thumb.jpg
 ```
 
-Imagemagick also includes a command called `mogrify`, which is similar to the `convert` command above but can work on batches of images.
+ImageMagick also includes a command called `mogrify`, which is similar to the `convert` command above but can work on batches of images.
 
 ## Handling different sizes for different viewports
 
-If you know that your users screen is only 500 pixels wide then you probably don't need to serve them huge image files. It used to be the case that there was no decent solution to this issue, however this is not the case today. The HTML5 `picture` element can be used in conjunction with media queries to ensure that only appropriately sized images are requested;
+If you know that your user's screen is only 500 pixels wide then you probably don't need to serve them huge image files. It used to be the case that there was no decent solution to this issue, however this is not the case today. The HTML5 `picture` element can be used in conjunction with media queries to ensure that only appropriately sized images are requested;
 
 ```
 <picture>
