@@ -8,6 +8,9 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      screens: {
+        print: { raw: "print" },
+      },
       colors: {
         primary: "#2E7D32",
         secondary: "#C8E6C9",

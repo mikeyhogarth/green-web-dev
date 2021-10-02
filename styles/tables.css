@@ -12,9 +12,9 @@ table tr {
 }
 
 table tr th {
-  @apply font-bold bg-primary text-white border border-primary;
+  @apply font-bold bg-primary text-white border border-primary print:border-black print:bg-white print:text-black;
 }
 
 table tr td {
-  @apply border border-secondary;
+  @apply border border-secondary print:border-black;
 }

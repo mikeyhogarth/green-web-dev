@@ -23,5 +23,5 @@ article dl.prompt-overview dt {
 }
 
 article dl.prompt-overview dd {
-  @apply block mb-2 md:mb-0 md:inline-block pr-8;
+  @apply block mb-2 md:mb-0 md:inline-block print:inline-block pr-8;
 }

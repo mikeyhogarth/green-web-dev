@@ -14,7 +14,7 @@ export default function Home() {
             Written and curated by web developers, for web developers.
           </aside>
         </h2>
-        <nav className="text-center md:text-left my-6">
+        <nav className="text-center md:text-left my-6 print:hidden">
           <Link href="/about">
             <a className="btn btn-primary inline-block md:mr-4">Start Here</a>
           </Link>
@@ -25,7 +25,7 @@ export default function Home() {
           </Link>
         </nav>
       </div>
-      <hr className="mb-8" />
+      <hr className="mb-8 print:hidden" />
       <div className="md:flex w-full text-center">
         <div className="flex-grow p-4 md:w-1/3">
           <FaLightbulb className="inline-block text-6xl text-primary" />

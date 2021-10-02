@@ -4,7 +4,7 @@ import { FaGithub, FaTwitter } from "react-icons/fa";
 const Footer = () => {
   return (
     <footer className="text-center p-10 mt-10 bg-gray-100 text-gray-600 border-t">
-      <div className="text-center">
+      <div className="text-center print:hidden">
         <SocialIcon
           link="https://github.com/mikeyhogarth/green-web-dev"
           linkTitle="Github Link"
@@ -20,7 +20,7 @@ const Footer = () => {
         Green Web Dev &copy;{new Date().getFullYear()} - Page Weight Budget
         350KB
       </p>
-      <p className="text-xs">
+      <p className="text-xs print:hidden">
         Join the conversation and contribute content over on{" "}
         <a
           className="text-black"
