@@ -47,6 +47,8 @@ export default function Articles({ categories, prompts }: Props) {
 
 export async function getStaticProps() {
   const prompts = await getContentPages("prompts");
-  const categories = Array.from(new Set(prompts.map((p) => p.data.category)));
+  const categories = Array.from(
+    new Set(prompts.map((p) => p.data.category.toLowerCase()))
+  );
   return { props: { prompts, categories } };
 }
