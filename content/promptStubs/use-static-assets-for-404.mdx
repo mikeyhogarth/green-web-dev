@@ -1,0 +1,11 @@
+---
+title: Use static assets for 404s etc.
+category: backend
+difficulty: easy
+status: stub
+---
+
+- there is no need to "compute" or "generate" a 404 page
+- serve these from static assets
+- if possible, serve from frontend
+- if not possible, tap out of the request at the earliest point (dont do a bunch of calculation and THEN decide that there is no page / the user is not allowed to see it)
