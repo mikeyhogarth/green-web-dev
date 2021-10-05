@@ -32,7 +32,7 @@ export default function Home() {
           <h3 className="text-xl mt-4 text-primary font-bold">Prompts</h3>
           <p>
             Browse through numerous prompts, ideas and techniques to help you
-            keep your page weight to a minimum.
+            keep your website&apos;s carbon footprint low.
           </p>
           <Link href="/prompts">
             <a>Browse Prompts</a>
@@ -42,7 +42,7 @@ export default function Home() {
           <FaBookReader className="inline-block text-6xl text-primary" />
           <h3 className="text-xl mt-4 text-primary font-bold">Articles</h3>
           <p>
-            Read guides and deep-dives covering a myriad of subjects around the
+            Resources and deep-dives covering a myriad of subjects around the
             topic of sustainable web development.
           </p>
           <Link href="/articles">
