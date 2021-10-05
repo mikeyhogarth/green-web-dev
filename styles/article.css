@@ -25,3 +25,14 @@ article dl.prompt-overview dt {
 article dl.prompt-overview dd {
   @apply block mb-2 md:mb-0 md:inline-block print:inline-block pr-8;
 }
+
+/*
+Block Quote
+*/
+blockquote {
+  @apply bg-gray-100 px-8 py-6 mb-4 border-l-8 border-gray-300;
+}
+
+blockquote p {
+  @apply mb-0;
+}

@@ -1,0 +1,80 @@
+---
+title: Use webfonts responsibly
+category: styles
+difficulty: easy
+status: draft
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
+<link
+  href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Pacifico&display=swap"
+  rel="stylesheet"
+/>
+
+Use web fonts responsibly and, where possible, use only natively supported fonts. Web fonts have been [supported across all major browsers](https://caniuse.com/fontface) for a very long time (as far back as Internet Explorer 6). They allow you to download and use specific fonts from directly within your CSS. There are a few reasons you might want to do this;
+
+- A particular font might be very important to your brand identity or a major stylistic choice for your application.
+- It might be very important that the site looks exactly the same across all browsers and operating systems (some native fonts are only available on certain operating systems, for example the [Tahoma](<https://en.wikipedia.org/wiki/Tahoma_(typeface)>) font Microsoft-developed and therefore [not available in some Linux distros](https://wiki.debian.org/tahoma)).
+
+Including web fonts does require your users to _download an additional and not-insignificant amount of extra data_, requiring more electricity and therefore increasing your site's carbon footprint.
+
+## Using web web fonts
+
+Web fonts are downloaded using the [`@font-face`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face) css rule. This supports several types of file formats including `woff2`, `TrueType` and `svg`.
+
+```
+@font-face {
+  font-family: "myAwesomeFont";
+  src: url("myAwesomeFont.woff2");
+}
+```
+
+Content Delivery Networks (CDNs) such as [google fonts](https://fonts.google.com/) will often provide the supporting CSS for you, meaning all you need to do is apply the style using the `font-family` rule wherever you want to use the font.
+
+## Examples
+
+The following block of text uses only natively supported [sans-serif](https://en.wikipedia.org/wiki/Sans-serif) fonts which the user will already have downloaded onto their computer by the time the page loads - there is no need for the user to download any further data;
+
+<blockquote>
+  <p>I am using only natively supported fonts</p>
+</blockquote>
+
+This next block uses the [Open Sans](https://fonts.google.com/specimen/Open+Sans) web font. Whilst very similar to the first block of text, there are some subtle differences between the two;
+
+<blockquote style={{ fontFamily: "'Open Sans', sans-serif" }}>
+  <p>I am using the 'Open Sans' web font</p>
+</blockquote>
+
+This final block uses the [Pacifico](https://fonts.google.com/specimen/Pacifico) font - the differences here are very obvious and using Pacifico has allowed us to achieve a look that would not be achievable using native browser fonts;
+
+<blockquote>
+  <p style={{ fontFamily: "'Pacifico', cursive" }}>
+    I am using the 'Pacifico' web font
+  </p>
+</blockquote>
+
+At time of writing, using the above web fonts has required your browser to download **an additional 36KB of data**;
+
+- 21KB for Pacifico
+- 15KB for OpenSans
+- remainder on a supporting stylesheet).
+
+In all cases, only one variant of each font was used - if we had downloaded multiple variants this cost would be much higher.
+
+## Using Webfonts responsibly
+
+This prompt is **not** reccomending that you avoid web fonts, only that you use them responsibly and with your eyes open to the data cost. Don't simply choose to use webfonts on a whim - make it a _conscious and confident choice_ and factor the extra download cost into your page weight budget.
+
+If you do decide that you are going to use web fonts, there are a number of things you can do in order to reduce the data cost;
+
+- **Use a CDN** - Using a CDN for your downloads, such as [google fonts](https://fonts.google.com/), may mean that your user's browser has already downloaded and cached the web font before they even come to your site. Most CDNs (including google fonts) will also include caching functionality, meaning the download will be less energy intensive because it'll be downloaded from a location close to you rather than from the original source (which may be on the other side of the planet).
+- **Only download what you need** - Some web fonts come with multiple variants (e.g. multiple font weights). You should only download what you are actually using.
+- **Consider images** - If you are only using webfonts in one place (e.g. the header/logo) then consider using an image with `alt` text instead - the data cost of downloading an image might end up being smaller than the cost of downloading a web font.
+- **Consider only using webfonts for titles and headings** - this would mean you only needed to download a particular variant or a smaller number of variants.
+
+## Relevant Links
+
+- [MDN page about web fonts](https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Web_fonts)
+- [MDN page about the `@font-face` css rule](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face)
+- [Caniuse page about web fonts](https://caniuse.com/fontface)
