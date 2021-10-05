@@ -15,7 +15,7 @@ status: draft
 Use web fonts responsibly and, where possible, use only natively supported fonts. Web fonts have been [supported across all major browsers](https://caniuse.com/fontface) for a very long time (as far back as Internet Explorer 6). They allow you to download and use specific fonts from directly within your CSS. There are a few reasons you might want to do this;
 
 - A particular font might be very important to your brand identity or a major stylistic choice for your application.
-- It might be very important that the site looks exactly the same across all browsers and operating systems (some native fonts are only available on certain operating systems, for example the [Tahoma](<https://en.wikipedia.org/wiki/Tahoma_(typeface)>) font Microsoft-developed and therefore [not available in some Linux distros](https://wiki.debian.org/tahoma)).
+- It might be very important that the site looks exactly the same across all browsers and operating systems (some native fonts are only available on certain operating systems, for example the [Tahoma](<https://en.wikipedia.org/wiki/Tahoma_(typeface)>) font is Microsoft-developed and therefore [not available in some Linux distros](https://wiki.debian.org/tahoma)).
 
 Including web fonts does require your users to _download an additional and not-insignificant amount of extra data_, requiring more electricity and therefore increasing your site's carbon footprint.
 
@@ -37,28 +37,28 @@ Content Delivery Networks (CDNs) such as [google fonts](https://fonts.google.com
 The following block of text uses only natively supported [sans-serif](https://en.wikipedia.org/wiki/Sans-serif) fonts which the user will already have downloaded onto their computer by the time the page loads - there is no need for the user to download any further data;
 
 <blockquote>
-  <p>I am using only natively supported fonts</p>
+  <p>This sentence is written using only natively supported fonts</p>
 </blockquote>
 
 This next block uses the [Open Sans](https://fonts.google.com/specimen/Open+Sans) web font. Whilst very similar to the first block of text, there are some subtle differences between the two;
 
 <blockquote style={{ fontFamily: "'Open Sans', sans-serif" }}>
-  <p>I am using the 'Open Sans' web font</p>
+  <p>This sentence is written using the 'Open Sans' web font</p>
 </blockquote>
 
 This final block uses the [Pacifico](https://fonts.google.com/specimen/Pacifico) font - the differences here are very obvious and using Pacifico has allowed us to achieve a look that would not be possible using native browser fonts;
 
 <blockquote>
   <p style={{ fontFamily: "'Pacifico', cursive" }}>
-    I am using the 'Pacifico' web font
+    This sentence is written using the 'Pacifico' web font
   </p>
 </blockquote>
 
 At time of writing, using the above web fonts has required your browser to download **an additional 36KB of data**;
 
-- 21KB for Pacifico
-- 15KB for OpenSans
-- remainder on a supporting stylesheet.
+- **21KB** for Pacifico.
+- **15KB** for OpenSans.
+- Several hundred bytes for a supporting stylesheet.
 
 In all cases, only one variant of each font was used - if we had downloaded multiple variants this cost would be much higher.
 

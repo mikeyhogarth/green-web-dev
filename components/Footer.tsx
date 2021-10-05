@@ -1,5 +1,5 @@
 import React from "react";
-import { FaGithub, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaTwitter, FaFacebook } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -11,9 +11,14 @@ const Footer = () => {
           Icon={FaGithub}
         />
         <SocialIcon
-          link="https://twitter.com/MetalMikey666"
+          link="https://twitter.com/greenwebdev_org"
           linkTitle="Twitter Link"
           Icon={FaTwitter}
+        />
+        <SocialIcon
+          link="https://www.facebook.com/greenwebdev"
+          linkTitle="Facebook Link"
+          Icon={FaFacebook}
         />
       </div>
       <p className="text-xs">
