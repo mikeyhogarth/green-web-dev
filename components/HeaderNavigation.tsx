@@ -17,8 +17,8 @@ const HeaderNavigation = ({ open, setOpen }: HeaderProps) => {
         <NavLink href="/about" text="About" setOpen={setOpen} />
         <NavLink href="/prompts" text="Prompts" setOpen={setOpen} />
         <NavLink
-          href="/articles"
-          text="Articles"
+          href="/resources"
+          text="Resources"
           setOpen={setOpen}
           supressBorder={true}
         />

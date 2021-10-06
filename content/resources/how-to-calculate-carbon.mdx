@@ -1,0 +1,22 @@
+---
+title: How to calculate the carbon footprint of your web application
+---
+
+How exactly do you equate a carbon footprint to a website? The bad news is that unfortunately you can't, and the best you can do is _estimate_ the amount.
+
+A French think tank called [The Shift project](https://theshiftproject.org/en/home/) created a report a few years ago entitled [LEAN ICT: TOWARDS DIGITAL SOBRIETY](https://theshiftproject.org/en/article/lean-ict-our-new-report/). In this report, they proposed a model for measuring the carbon emissions of a website called the **1-byte model**. This model represents the most prominent formula currently available, essentially it equates weights to several aspects of an application;
+
+- Where is it hosted?
+- What device is it running on?
+- How much data (in bytes) is it using?
+
+From these three facets, the 1-byte model proposes that you can get a carbon estimate for your application. This will, of course, only be an estimate - sadly, the reality of how much carbon our applications use is currently completely opaque to us, but the reasoning behind the model is absolutely sound: use less data, use less carbon. The people over at the [Green Web Foundation](https://www.thegreenwebfoundation.org/) implemented a Javascript library called [CO2.js](https://github.com/thegreenwebfoundation/co2.js) which aims to provide an implementation of the 1-byte model for use in tools and APIs.
+
+In addition to data, it is also a well known fact that **CPU cycles** are a drain on electricity and batteries.
+
+Whilst it may be that we can never see the true carbon impact of our applications, the main messaging around this issue is perfectly clear:
+
+- Try to **use less data**.
+- Try to **build efficient applications**.
+
+Minimise these two things, and you minimise the carbon footprint of your app - at the same time, in most cases, you will also end up minimising your costs and minimising user frustration. These are the principles that the prompts on this site can help you with - however, for a deeper dive on the specifics of calculating carbon emissions, I suggest you check out some of the [external resources](/resources) that we link to - in particular, the Green Web Foundation have produced several [tools](https://www.thegreenwebfoundation.org/green-web-feed/) and [services](https://www.thegreenwebfoundation.org/services/) to help calculate website carbon, as well as some thorough [articles](https://www.thegreenwebfoundation.org/news/) on the subject.
