@@ -18,22 +18,18 @@ interface Props {
   data: MetaData;
 }
 
-export default function Article({ source, data }: Props) {
-  const { author, title, date, formattedDate } = data;
+export default function Resource({ source, data }: Props) {
+  const { title } = data;
 
   return (
     <>
-      <HtmlHead title="Green Web Dev :: Article" description={title} />
+      <HtmlHead title={`Green Web Dev :: ${title}`} description={title} />
 
-      <Link href="/articles">
-        <a>Back to articles</a>
+      <Link href="/resources">
+        <a>Back to resources</a>
       </Link>
       <article>
         <h1 className="font-bold">{title}</h1>
-        <p className="text-gray-500">
-          <FaCalendarDay className="inline-block relative mr-2 -top-1" />
-          Published <time dateTime={date}>{formattedDate}</time> by {author}
-        </p>
         <hr className="pb-8" />
         <MDXRemote {...source} />
       </article>
@@ -48,7 +44,7 @@ export default function Article({ source, data }: Props) {
  */
 export async function getStaticProps({ params }: any) {
   const { content, data } = await getContentPage(
-    "articles",
+    "resources",
     params?.slug?.toString() || ""
   );
 
@@ -67,7 +63,7 @@ export async function getStaticProps({ params }: any) {
  * @returns
  */
 export async function getStaticPaths() {
-  const pages = await await getContentPages("articles");
+  const pages = await await getContentPages("resources");
   const paths = pages.map(({ slug }) => ({ params: { slug } }));
 
   return {

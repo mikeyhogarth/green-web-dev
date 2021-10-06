@@ -40,13 +40,13 @@ export default function Home() {
         </div>
         <div className="flex-grow md:mx-2 p-4 md:w-1/3">
           <FaBookReader className="inline-block text-6xl text-primary" />
-          <h3 className="text-xl mt-4 text-primary font-bold">Articles</h3>
+          <h3 className="text-xl mt-4 text-primary font-bold">Resources</h3>
           <p>
-            Resources and deep-dives covering a myriad of subjects around the
-            topic of sustainable web development.
+            Resources, deep-dives and external links covering a myriad of
+            subjects around the topic of sustainable web development.
           </p>
-          <Link href="/articles">
-            <a>Read Articles</a>
+          <Link href="/resources">
+            <a>Browse Resources</a>
           </Link>
         </div>
         <div className="flex-grow p-4 md:w-1/3">

@@ -23,6 +23,6 @@ A prompt **Should** have the following properties;
 - Where applicable, [caniuse](https://caniuse.com/) links should be provided.
 - The prompt should end with some useful links for futher reading, allowing the user to continue investigating the topic should they want to.
 
-## Contributing an Article
+## Contributing a Resource
 
-For the time being, articles on this site are core-team only, however if you have written an article elsewhere that is pertinant to any of the prompts, you are free to suggest it as a relevant link to that prompt.
+For the time being, resources on this site are core-team only, however if you see a resource written elsewhere that is pertinant to any of the prompts, you are free to suggest it as a relevant link.
