@@ -45,8 +45,8 @@ export default function Resources(props: Props) {
         deeper dive then we reccomend these resources;
       </p>
       <dl>
-        {externalLinks.map((el) => (
-          <>
+        {externalLinks.map((el, idx) => (
+          <div key={idx}>
             <dt>
               <a
                 className="text-xl"
@@ -58,7 +58,7 @@ export default function Resources(props: Props) {
               </a>
             </dt>
             <dd className="mb-6">{el.description}</dd>
-          </>
+          </div>
         ))}
       </dl>
     </div>
