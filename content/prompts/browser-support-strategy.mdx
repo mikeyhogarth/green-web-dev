@@ -5,36 +5,45 @@ difficulty: easy
 status: draft
 ---
 
-Choose a browser support strategy that is sustainable. At the most basic level, this should include a commitment to support the most modern versions of each browser and a "cut off" point for when you stop supporting older versions of a particular browser - where that cut-off point lies is up to you, but the main crux of this prompt is simply to "have a strategy".
+Fundamentally, this includes:
 
-There are a few sustainability angles to this;
+- A commitment to support the most recent versions of each browser.
+- A limit for how long you support older versions of any browser.
 
-- Older browsers don't support sustainable techniques.
-- Some browsers are more memory-intensive / power hungry than others.
+How long you support any version of a browser is up to you, but the point is to **have a strategy**.
+
+The sustainability considerations to be made are:
+
+- Older browsers typically don't support sustainable techniques.
+- Some browsers are more resource-intensive (and therefore more power-hungry) than others.
 
 The following sections go into more detail on each of these.
 
 ## Older browsers lack support for sustainable techniques
 
-Many of the gains to be made in terms of sustainabilty in web development come from leveraging the features of modern browsers. Things like [modern image format support](https://caniuse.com/webp), [tags to help serve images at appropriate sizes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture) and [CSS media Queries](https://caniuse.com/css-mediaqueries).
+Many of the potential gains from sustainable web development depend on modern browser techniques, including:
 
-By supporting older browsers (and let's just call this what it is - Internet Exporer 11, Opera Mini and any browser-version prior to 2018) you are helping to keep unsustainable web pratcices alive.
+- [Modern image format support](https://caniuse.com/webp).
+- [Tags to help serve images at appropriate sizes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture).
+- [CSS media queries](https://caniuse.com/css-mediaqueries).
 
-Now - obviously it might be that there are commercial reasons that you can't just "stop" supporting these browsers - you may be staring down marketing metrics that suggest you will lose customers (and subsequently revenue) if you cut off support for older browsers. It's also important to consider inclusivity in our applications - unfortunately that sometimes means catering for people who are perhaps not very computer litirate and for whom "upgrading their browser" is quite a scary step to take.
+By supporting older browsers (Notably Internet Exporer 11, Opera Mini, and any browser version released prior to 2018), you risk perpetuating unsustainable web practices.
 
-All that said - you are not doing your customers any favours by helping them continue to use outdated browsers (especially Internet Explorer, for which Microsoft have officially [withdrawn support](https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/)). Continuing to use older browsers represents a very real security risk for your customers.
+Perhaps you have commercial reasons for supporting these browsers; your marketing data may suggest a significant loss of custom if you cease support for older software. Also, since modern web applications are meant to be inclusive, you will probably need to accommodate people who find the prospect of upgrading or switching their browser software a daunting task.
 
-You have a few options;
+Despite what you may think, you are not truly helping your customers by enabling their continued use of outdated browsers (In the case of Internet Explorer, Microsoft have officially [withdrawn support](https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/)). Use of older browsers represents a very real security risk for your customers.
 
-- Simply refuse to serve customers using older browsers (This may not be an option for you commercially).
-- Continue to cater for these users, but encourage them to upgrade their browser. There are [tools out there](https://browser-update.org/) to help you do this.
+You have a few options for such customers:
+
+- Refuse to serve them until they upgrade.
+- Continue to cater for them, but encourage them to upgrade their browser. There are [tools available](https://browser-update.org/) to help you do this.
 
 ## Don't force users to use a particular browser
 
-So often in industry we see company websites that advise users to use a particular brand of browser for "the best experience". In some instances, this comes from a good place: encouraging customers to upgrade and use the most modern browsers. Tooling and algorithms are always striving to be more efficient so modern tooling usually means a longer battery life and a better user experience.
+Websites often advise people to install a particular browser for "the best experience". Sometimes this advice is well-intentioned, and encourages customers to upgrade and use any popular, modern browser. Tooling and algorithms continually strive to be more efficient, so embracing modern software typically results in longer battery life and a better user experience.
 
-In other cases though, developers will instead force users down the path of using a particular browser purely so they don't have to support the others. Wihlst this might lead to an increase in productivity, you need to weight this against the fact that you may be forcing users to use browsers that are more memory hungry (and power hungry) than their lighter alternatives. Chrome, for example, is an excellent browser but is frequently [called out as being very memory hungry](https://www.makeuseof.com/tag/chrome-using-much-ram-fix-right-now/). By forcing your customers to use a particular browser, you may also be forcing them to use more of their laptop batteries.
+Conversely, developers might encourage people to use a specific browser because they don't intend to support the others. As a developer who does this, you must weigh any productivity gains from reduced support requirements against the impact of people being forced to use browsers that consume more resources (and hence more power) than others you don't want to support. Chrome, for example, is an otherwise excellent browser that is frequently [called out as being very memory hungry](https://www.makeuseof.com/tag/chrome-using-much-ram-fix-right-now/).
 
 ## Relevant Links
 
-- [Can I use?](https://caniuse.com/) - the ultimate guide to whether a technique can or cannot be used in a particular browser.
+- [Can I use?](https://caniuse.com/) - a comprehensive reference of browsers and the web technologies they support.
