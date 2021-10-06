@@ -1,5 +1,5 @@
 module.exports = {
-  siteUrl: process.env.SITE_URL || "https://green-web-dev.vercel.app/",
+  siteUrl: process.env.SITE_URL || "https://www.greenwebdev.org/",
   changefreq: "weekly",
   outDir: "./out",
   generateRobotsTxt: true,
