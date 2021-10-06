@@ -2,8 +2,6 @@ import { getContentPage, getContentPages } from "../../utils/file.utils";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import Link from "next/link";
-import { FaCalendarDay } from "react-icons/fa";
-import { enrichData } from "../../utils/article.utils";
 import HtmlHead from "../../components/HtmlHead";
 
 interface MetaData {
@@ -53,7 +51,7 @@ export async function getStaticProps({ params }: any) {
   return {
     props: {
       source,
-      data: enrichData(data),
+      data,
     },
   };
 }
