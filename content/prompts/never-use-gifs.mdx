@@ -5,7 +5,8 @@ difficulty: easy
 status: draft
 ---
 
-Instead of a GIF, use a `video` element to render an MP4 video. The file size of GIFs can be excessive, even for very short videos, and a near-identical effect can be achieved with a much smaller MP4 file. The following may look like a GIF, but is actually a muted MP4 set to play automatically and loop indefinitely.
+Instead of animated GIFs, use the HTML5 `video` element to stream MP4 videos. The file size of a GIF can be quite large even for very short videos, and a near-identical effect can be achieved with a much smaller MP4 file. The following may look like a GIF, but is actually a muted MP4 set to play automatically and loop indefinitely.
+
 <div className="text-center">
   <video autoPlay loop muted playsInline className="inline-block mt-5">
     <source src="/media/video/malcom.mp4" type="video/mp4" />
@@ -21,7 +22,7 @@ Instead of a GIF, use a `video` element to render an MP4 video. The file size of
 
 The only way most users would realise this was a video is if they right-clicked it, at which point they might be thankful for the additional versatility of the format, including options to pause and rewind, view full-screen, or even "cast" the video to other devices.
 
-The video above was originally a GIF almost 2MB in size. After an [online tool](https://cloudconvert.com/gif-to-mp4) was used to convert it into an MP4, the file's size dropped to less than 100k. Since video data is be _streamed_ to the user and not downloaded in full like a GIF, the user only pays the data cost for what they actually view.
+The video above was originally a GIF almost 2MB in size. After an [online tool](https://cloudconvert.com/gif-to-mp4) was used to convert it into an MP4, the file's size dropped to less than 100k. Since video data will be _streamed_ to the user and not downloaded in full like a GIF, the user only pays the data cost for what they actually view.
 
 Be aware that **MP4 Videos do not support transparency** like GIFs do; if transparency is required, consider a modern format with better compression such as WebP or AVIF, both of which support animation and transparency.
 
