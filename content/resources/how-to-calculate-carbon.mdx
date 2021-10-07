@@ -2,21 +2,27 @@
 title: How to calculate the carbon footprint of your web application
 ---
 
-How exactly do you equate a carbon footprint to a website? The bad news is that unfortunately you can't, and the best you can do is _estimate_ the amount.
+How exactly do you equate a carbon footprint to your website or application?
 
-A French think tank called [The Shift project](https://theshiftproject.org/en/home/) created a report a few years ago entitled [LEAN ICT: TOWARDS DIGITAL SOBRIETY](https://theshiftproject.org/en/article/lean-ict-our-new-report/). In this report, they proposed a model for measuring the carbon emissions of a website called the **1-byte model**. This model represents the most prominent formula currently available, essentially it equates weights to several aspects of an application;
+The bad news is that unfortunately you can't - not exactly. Between the background noise of the measurement, the unseen factors and the inherent opaqueness of the carbon spent by web hosting companies, The best you can do is _estimate_ the amount. The _good news_ is that we do have a pretty solid grasp on the factors that cause carbon emissions to increase, which is all we need to know in order to optimise.
+
+A French think tank called [The Shift project](https://theshiftproject.org/en/home/) created a report a few years ago entitled [LEAN ICT: TOWARDS DIGITAL SOBRIETY](https://theshiftproject.org/en/article/lean-ict-our-new-report/). In this report, they proposed a model for estimating the carbon emissions of web based applications called the **1-byte model**. This model represents the most prominent formula currently available, essentially it equates weights to several aspects of an application;
 
 - Where is it hosted?
 - What device is it running on?
 - How much data (in bytes) is it using?
 
-From these three facets, the 1-byte model proposes that you can get a carbon estimate for your application. This will, of course, only be an estimate - sadly, the reality of how much carbon our applications use is currently completely opaque to us, but the reasoning behind the model is absolutely sound: use less data, use less carbon. The people over at the [Green Web Foundation](https://www.thegreenwebfoundation.org/) implemented a Javascript library called [CO2.js](https://github.com/thegreenwebfoundation/co2.js) which aims to provide an implementation of the 1-byte model for use in tools and APIs.
+From these three facets, the 1-byte model proposes that you can get a carbon estimate for your application. This will, of course, only be an estimate - but getting an accurate number is much less important than the reasoning behind the model: less data means less carbon... and luckily for us, data is _very_ easy to measure: We can see it flowing all through our applications, from the weight of the pages and resources we send to users right back to the requests we send to databases, APIs and microservices.
 
-In addition to data, it is also a well known fact that **CPU cycles** are a drain on electricity and batteries.
+The people over at the [Green Web Foundation](https://www.thegreenwebfoundation.org/) implemented a Javascript library called [CO2.js](https://github.com/thegreenwebfoundation/co2.js) which aims to provide an implementation of the 1-byte model for use in tools and APIs.
 
-Whilst it may be that we can never see the true carbon impact of our applications, the main messaging around this issue is perfectly clear:
+In addition to data, it is also well established that **CPU cycles** are a drain on electricity and batteries - make your computer work harder and it will require more power. This is much more difficult to measure, but again measuring is very much a "nice to have" - just because we can't equate an exact figure to the carbon footprint of an application does not mean we can't optimise to reduce it. Most engineers are familiar with the concept of writing efficient code (in fact at a certain point in their career, engineers become very uncomfortable with _not_ optimizing!) but there are always more ways to reduce cycles further.
 
-- Try to **use less data**.
-- Try to **build efficient applications**.
+Whilst it may be that we can never see the true carbon impact of our applications, the main messaging around this issue is very clear:
 
-Minimise these two things, and you minimise the carbon footprint of your app - at the same time, in most cases, you will also end up minimising your costs and minimising user frustration. These are the principles that the prompts on this site can help you with - however, for a deeper dive on the specifics of calculating carbon emissions, I suggest you check out some of the [external resources](/resources) that we link to - in particular, the Green Web Foundation have produced several [tools](https://www.thegreenwebfoundation.org/green-web-feed/) and [services](https://www.thegreenwebfoundation.org/services/) to help calculate website carbon, as well as some thorough [articles](https://www.thegreenwebfoundation.org/news/) on the subject.
+- Try to **use less data** and not be wasteful.
+- Try to **build efficient, fast applications**.
+
+Minimise these two things and you minimise the electricity consumption and thus the carbon footprint of your application, and in most cases you will also end up minimising your costs and providing a better user experience at the same time. These are the things that the [prompts](/prompts) on this site can help you with (we're web developers, not scientists!).
+
+For a deeper dive on the specifics of calculating carbon emissions, we suggest you check out some of the [external resources](/resources) that we link to in our resources section where people have dedicated much more time to the science behind the issue - in particular, the Green Web Foundation who have produced several [tools](https://www.thegreenwebfoundation.org/green-web-feed/) and [services](https://www.thegreenwebfoundation.org/services/) to help calculate website carbon, as well as some thorough [articles](https://www.thegreenwebfoundation.org/news/) on the subject.

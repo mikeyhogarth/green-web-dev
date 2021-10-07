@@ -57,3 +57,7 @@ main a {
 main a:hover {
   @apply text-highlight underline;
 }
+
+main a[target="_blank"]::after {
+  content: "\2197";
+}

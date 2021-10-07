@@ -14,7 +14,7 @@ interface Props {
   categories: string[];
 }
 
-export default function Articles({ categories, prompts }: Props) {
+export default function Prompts({ categories, prompts }: Props) {
   return (
     <div>
       <HtmlHead
