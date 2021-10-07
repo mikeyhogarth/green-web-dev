@@ -22,9 +22,7 @@ export default function Resources(props: Props) {
       />
 
       <h2>Site Resources</h2>
-      <p>
-        Information and articles produced by us:
-      </p>
+      <p>Information and articles produced by us:</p>
       <ul className="list-disc">
         {props.resources.map((r) => (
           <li key={r.slug}>
@@ -37,15 +35,15 @@ export default function Resources(props: Props) {
 
       <h2>External Links</h2>
       <p className="pb-4">
-        Links to allies and fellow knowledge-sharers in the field of
-        sustainable web development. Please take the time to read these—our
-        site covers ways to reduce data and CPU usage, but does not go into
-        the specifics of why doing so is important; if you are interested in a
-        deeper dive, we recommend these resources:
+        Links to allies and fellow knowledge-sharers in the field of sustainable
+        web development. Please take the time to read these — our site covers
+        ways to reduce data and CPU usage, but does not go into the specifics of
+        why doing so is important; if you are interested in a deeper dive, we
+        recommend these resources:
       </p>
       <dl>
         {externalLinks.map((el) => (
-          <>
+          <div key={el.title}>
             <dt>
               <a
                 className="text-xl"
@@ -57,7 +55,7 @@ export default function Resources(props: Props) {
               </a>
             </dt>
             <dd className="mb-6">{el.description}</dd>
-          </>
+          </div>
         ))}
       </dl>
     </div>
