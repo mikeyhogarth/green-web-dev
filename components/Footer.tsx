@@ -35,6 +35,11 @@ const Footer = () => {
         </a>
         !
       </p>
+      <p className="text-xs print:hidden">
+        <a className="text-black" href="/cookies-and-privacy">
+          Cookies and privacy
+        </a>
+      </p>
     </footer>
   );
 };
