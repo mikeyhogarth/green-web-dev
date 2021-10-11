@@ -10,10 +10,7 @@ export default function Cue({ source, data, slug }: any) {
 
   return (
     <>
-      <HtmlHead
-        title={`Green Web Dev :: ${data.title}`}
-        description={data.title}
-      />
+      <HtmlHead title={data.title} description={data.title} />
 
       <Link href="/prompts">
         <a className="print:hidden">Back to prompts</a>

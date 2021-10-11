@@ -17,7 +17,7 @@ export default function Resources(props: Props) {
   return (
     <div>
       <HtmlHead
-        title="Green Web Dev :: Resources"
+        title="Resources"
         description="Deep dives and resources about sustainable web dev"
       />
 

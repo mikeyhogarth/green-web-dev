@@ -1,16 +1,20 @@
 import Head from "next/head";
 
-const HtmlHead = ({
-  title = "Green Web Dev",
-  description = "Prompts and tips for creating sustainable web applications",
-}) => {
+interface Props {
+  title: string;
+  description: string;
+}
+
+const HtmlHead = ({ title, description }: Props) => {
+  const siteNameTitle = `Green Web Dev :: ${title}`;
+
   return (
     <Head>
-      <title key="title">{title}</title>
+      <title key="title">{siteNameTitle}</title>
       <meta name="description" content={description} key="desciption" />
 
       {/* OG tag */}
-      <meta property="og:title" content={title} key="og:title" />
+      <meta property="og:title" content={siteNameTitle} key="og:title" />
       <meta
         property="og:description"
         content={description}
@@ -18,7 +22,7 @@ const HtmlHead = ({
       />
 
       {/* Twitter tags */}
-      <meta name="twitter:title" content={title} />
+      <meta name="twitter:title" content={siteNameTitle} />
       <meta name="twitter:description" content={description} />
     </Head>
   );
