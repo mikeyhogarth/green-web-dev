@@ -18,11 +18,9 @@ interface Props {
 
 export default function Resource({ source, data }: Props) {
   const { title } = data;
-
   return (
     <>
-      <HtmlHead title={`Green Web Dev :: ${title}`} description={title} />
-
+      <HtmlHead title={title} description={title} />
       <Link href="/resources">
         <a>Back to resources</a>
       </Link>

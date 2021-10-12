@@ -5,7 +5,7 @@ difficulty: medium
 status: draft
 ---
 
-Minimize the amount of data returned by a single API request. There are many ways you can do this, such as:
+Minimize the amount of data returned by a single API request by allowing users to customize what you send to them. There are many ways you can do this:
 
 - **Pre-aggregate metrics** such as counts and averages so your user doesn't have to do these calculations themselves.
 - Empower your users to **only request the data they actually need** for a given use case, for example specific fields or specific quantities.
@@ -14,12 +14,12 @@ Minimize the amount of data returned by a single API request. There are many way
 
 If you ensure that your users can minimize the amount of data they request from your API, you will save data and reduce the carbon footprint of your application not only for your own customers but also for your customer's cutomers.
 
-## The classic example: Blog with comments
+## Example: A Blog with comments
 
-Consider a blog with comments - a poor API might expose an endpoint like this as being the only way to get a list of the blogs for a given month;
+Suppose you are creating an API for a blog with comments - a poor API might expose an endpoint like the following example as the only way to get a list of the blogs for a given month;
 
 ```
-GET /blogs/?year=2021&month=10
+GET /posts/?year=2021&month=10
 [
   {
     "id": 1,
@@ -34,19 +34,19 @@ GET /blogs/?year=2021&month=10
 In order to find the comments for this post, the user must send away a second request to the `comments` endpoint;
 
 ```
-GET /blogs/1/comments/
+GET /posts/1/comments/
 [
   { "author": "Fred" , "comment": "I totally agree"},
   { "author": "Barney" , "comment": "Good post"},
 ]
 ```
 
-Let's say your customer is creating a "browse posts per month" feature for their site. To do this, all they need from your API is the title, the date and the _number_ of comments for a given month - they also want to paginate through 10 posts at a time. With no way of preventing all of this data being sent back, the user is required to make a potentially large request for all the blog data, and then another request per blog to get the comment count - this will all include data they do not need.
+Let's say your customer is creating a "browse posts per month" feature for their site. To do this, all they need from your API is the title, the date and the _number_ of comments for a given month - they also want to paginate through 10 posts at a time. With no way of preventing all of this data being sent back, the user is required to make a potentially large request for all the blog data, and then another request per post to get the comment count - this will all include data they do not need.
 
 Now imagine you used a different model and gave the user some control over what they received in the response and pre-aggregated the comment count such that it could be requested directly via the blog endpoint;
 
 ```
-GET /blogs/?year=2021&month=10&fields=title,date,commentCount&skip=0&take=10
+GET /posts/?year=2021&month=10&fields=title,date,commentCount&skip=0&take=10
 [
   {
     "title": "My first article",
@@ -67,7 +67,7 @@ Whilst you _can_ design a bespoke API that is optimal for your users, there are 
 
 Both of these provide, by design, implementations that allow users to only request the data they need and offer conventions for patterns such as pagination and pre-fetching related records.
 
-As well as giving you a battle-tested pattern to base your API around, your customers are also likely to thank you for the improved developer experience they receive when consuming your API: Not only are responses now tailorable, they are also _predictable_ and because both JSON-API and GraphQL are schema-based, you can auto-generate your documentation and your API consumers can auto-generate much of their client code.
+As well as giving you a battle-tested pattern to base your API around, your customers are also likely to thank you for the improved developer experience they receive when consuming your API: Not only are responses now tailorable, they are also _predictable_ and because both JSON-API and GraphQL are _schema-based_. This means that you can auto-generate your documentation and your API consumers can auto-generate much of their client code!
 
 ## Relevant Links
 

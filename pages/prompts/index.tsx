@@ -18,7 +18,7 @@ export default function Prompts({ categories, prompts }: Props) {
   return (
     <div>
       <HtmlHead
-        title="Green Web Dev :: Prompts"
+        title="Prompts"
         description="Quick tips and tricks to help reduce the carbon footprint of your website or application"
       />
 

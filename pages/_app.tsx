@@ -16,7 +16,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       </Head>
       <HtmlHead
         title="Green Web Dev"
-        description="Prompts and tips for creating sustainable web applications"
+        description="Practical web development prompts for minimizing the carbon footprint of your website or application. Written and curated by web developers, for web developers."
       />
 
       <Header />
