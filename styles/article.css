@@ -54,3 +54,7 @@ article aside h4,
 article aside h5 {
   @apply my-0 text-lg font-bold;
 }
+
+article aside a {
+  @apply text-yellow-700 hover:text-yellow-600;
+}
