@@ -1,0 +1,61 @@
+---
+title: Use a CDN
+category: styles
+difficulty: medium
+status: wip
+---
+
+Use media queries to create a responsive web application. People are no longer simply uing traditional laptops and desktop computers to consume web applications - the use of devices such as mobile phones, tablets and televisions is now commonplace. As a result, we no longer live in a "one size fits all" world when it comes to designing user experiences. Serving the full-fat version of your web application to your users will not only result in a poor user experience, it may also result serving them a lot more data than they need to, increasing the carbon footprint of your application.
+
+## Media Queries
+
+[Media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries) are [supported across all major browsers](https://caniuse.com/css-mediaqueries) and have been for some time. They allow you to detect certain properties of the device consuming the application, such as whether it has a color screen or (in the case of phones) whether it is oriented landscape or portrait. The feature that media queries are perhaps most famous for though is their ability to detect the width and height of a device's viewport and apply styles accordingly;
+
+```
+@media (max-width: 480px) {
+  .hide-on-mobile {
+    display: none;
+  }
+}
+```
+
+Using media queries allows developers to have their applications "adapt" to the viewport, serving lighter versions of their applications which perform better on mobile devices (conserving battery and thus saving carbon) and in some cases can wholesale avoid downloading some of the larger presentational assets altogether. Whilst your huge, striking hero or header image might look great on a desktop application, a mobile user might not appreciate the additional bandwidth cost they are having to pay for an image that is ultimately going to be reized to fit their viewport anyway.
+
+There is a big UX angle to this too: desktops and laptops provide you with a lot of horizontal space and allow you to apply column-based layouts which mobiles do not, and certain elements such as menus and navigation may need to be replaced entirely on mobile devices for usability reasons.
+
+## Images
+
+One common "gotcha" with regards to images and media queries is that whilst behavior across browsers will vary, simply adding a `display: none` css property to an image will often _not_ prevent your browser from downloading that image (you can confirm this using your browser's developer tools). This means that the user still pays the download cost (and the carbon cost) of the image even though they never see it.
+
+There are a number of ways around this:
+
+### Approach 1: Make the image a background image
+
+Most browsers will not download an image if you use a css background image rather than an image tag;
+
+```
+<!-- this will still download the image -->
+<img style="display: none" src="foo.png" alt="a picture!" />
+
+<!-- in most browsers, the image will not be downloaded -->
+<div style="display: none; background-image: url('foo.png');"></div>
+```
+
+**Don't simply default to using this approach for all images!** The two elements above are _not_ equivalent - the `img` tag expressly indicates to the user's browser that the image is semantically important to the content, the `div` does not. This is important from an accessibility perspective because using an image tag allows you to specify things like `alt` text which will be read out to screen reader users and displayed to anyone who for some reason cannot download the image. This advice works both ways: if an image is purely used for _presentational_ purposes (e.g. as a background to your site header) then it is not semantically important and `background-image` should be used regardless of what you are doing with media queries - a screen reader user does not need to know that you have a lovely leafy image on the background of your header!
+
+### Approach 2: Use the `lazy` loading attribute
+
+Some browsers will respect the `lazy` attribute with regards to CSS `display: none` only load images when they become visible to the user. For more details on this approach see our page on [Lazy Loading images](/prompts/lazy-load-images).
+
+### Approach 3: Use the `picture` element
+
+- load smaller images using `picture`
+
+## Design Mobile First
+
+Prior to media queries, it was commonplace for developers to make _two versions_ of their application (one for standard desktops, one for mobile) They would achieve this using the request's [user agent property](https://developer.mozilla.org/en-US/docs/Web/HTTP/Browser_detection_using_the_user_agent) to figure out whether the request came from a mobile device or not. The rate of change within the mobile market along with the advent of popular tablet devices meant that this approach lasted only a few years before its inability to scale became a hinderance.
+
+## Relevant Links
+
+- [MDN Page about Media Queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries)
+- [CSSTricks guide to common device viewport sizes](https://css-tricks.com/snippets/css/media-queries-for-standard-devices/)
