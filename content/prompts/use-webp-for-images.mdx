@@ -5,6 +5,8 @@ difficulty: easy
 status: draft
 ---
 
+import { MDXRemote } from "next-mdx-remote";
+
 [WebP](https://developers.google.com/speed/webp) is a next-generation image format developed by Google and can be used in place of earlier formats such as JPEGs, PNGs and GIFs. The WebP format offers [25-35% compression](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types#webp) over older formats and is [supported by all major browsers](https://caniuse.com/webp). The WebP format includes support for;
 
 - Animation
@@ -14,7 +16,9 @@ status: draft
 
 Conversion from other formats into WebP will almost always result in a reduction in size without having to compromise on quality, and there are a number of tools out there which can handle the conversion for you, such as [ImageMagick](https://imagemagick.org/script/webp.php) and the official [Command Line Tool](https://developers.google.com/speed/webp/docs/precompiled).
 
-Note that a successor to this format already exists in the form of AVIF, however [AVIF browser support](https://caniuse.com/avif) is not yet mature enough to use it without a fallback image (see Compatibility below).
+> ### AVIF
+>
+> A successor to webP format already exists in the form of **AVIF** which promises even better compression, however [AVIF browser support](https://caniuse.com/avif) is not yet mature enough to use it without a fallback image (see Compatibility below).
 
 ## Compatibility
 

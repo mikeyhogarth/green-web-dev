@@ -1,5 +1,5 @@
 ---
-title: Use a CDN
+title: Use responsive design
 category: styles
 difficulty: medium
 status: wip
@@ -49,13 +49,26 @@ Some browsers will respect the `lazy` attribute with regards to CSS `display: no
 
 ### Approach 3: Use the `picture` element
 
-- load smaller images using `picture` tag (TODO)
+The [`picture`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture) element is relatively well supported across browsers and allows you to specify which images to load based on media queries, meaning you can provide several versions of an image and allowing your browser to select the appropriate version:
+
+```
+<picture>
+    <source srcset="/small.jpg" media="(min-width: 480px)" />
+    <source srcset="/medium.jpg" media="(min-width: 1000px)" />
+    <img src="/large.jpg" alt="An image" />
+</picture>
+```
+
+The browser will only ever download one of the images, meaning you can serve different sizes for different viewports.
 
 ## Design Mobile First
 
 Prior to media queries, it was commonplace for developers to make _two versions_ of their application (one for standard desktops, one for mobile) They would achieve this using the request's [user agent property](https://developer.mozilla.org/en-US/docs/Web/HTTP/Browser_detection_using_the_user_agent) to figure out whether the request came from a mobile device or not. The rate of change within the mobile market along with the advent of popular tablet devices meant that this approach lasted only a few years before its inability to scale became a hinderance.
 
+Aside from the scalability issue, designing for the desktop first and "cutting back" for mobile is actually a lot more difficult to do because it means that in order to get started on a project, you need to start with the most advanced version of the design and "degrade gracefully" into the more simple version (the mobile version) afterwards. Starting with a mobile design allows us to do the opposite of this: to "progressively enhance". This is not only much easier and quicker, but it also ensures that we do not end up neglecting our mobile users (who are no longer an insignificant portion of our users - figures currently show [mobile traffic contributing 52% of all internet traffic](https://css-tricks.com/how-to-develop-and-test-a-mobile-first-design-in-2021/)!
+
 ## Relevant Links
 
 - [MDN Page about Media Queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries)
 - [CSSTricks guide to common device viewport sizes](https://css-tricks.com/snippets/css/media-queries-for-standard-devices/)
+- [CSSTricks article about mobile first development](https://css-tricks.com/how-to-develop-and-test-a-mobile-first-design-in-2021/)
