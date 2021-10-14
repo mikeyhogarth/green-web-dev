@@ -41,7 +41,7 @@ blockquote p {
 Callout
 */
 article aside {
-  @apply bg-yellow-100 px-8 py-6 mb-4 border-l-8 border-yellow-300;
+  @apply bg-secondary px-8 py-6 mb-4 border-l-8 border-highlight;
 }
 article aside p {
   @apply mb-0;
@@ -55,6 +55,9 @@ article aside h5 {
   @apply my-0 text-lg font-bold;
 }
 
-article aside a {
-  @apply text-yellow-700 hover:text-yellow-600;
+/*
+  contribute-callout
+*/
+article .contribute-callout {
+  @apply bg-gray-100 border-l-8 border-gray-400;
 }
