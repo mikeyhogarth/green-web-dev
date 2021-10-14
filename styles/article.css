@@ -41,7 +41,7 @@ blockquote p {
 Callout
 */
 article aside {
-  @apply bg-secondary px-8 py-6 mb-4 border-l-8 border-highlight;
+  @apply bg-secondary px-8 py-6 mb-4 border-l-8 mt-10 border-highlight;
 }
 article aside p {
   @apply mb-0;

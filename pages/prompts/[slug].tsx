@@ -32,8 +32,10 @@ export default function Cue({ source, data, slug }: any) {
         </dl>
         <hr className="pb-8" />
         <MDXRemote components={components} {...source} />
-        <aside className="contribute-callout p-4 px-8 mt-20 sprint:hidden">
-          <h3>Help us improve this content</h3>
+        <aside className="contribute-callout p-4 px-8 mt-16 sprint:hidden">
+          <h3 className="text-2xl mb-4 font-normal">
+            Help us improve this content
+          </h3>
           <p className="mb-0">
             Have you spotted a typo, mistake or enhancement? You can help to
             improve this content by{" "}
@@ -46,7 +48,7 @@ export default function Cue({ source, data, slug }: any) {
             </a>
             . Please ensure that you read the{" "}
             <a href="https://github.com/mikeyhogarth/green-web-dev/blob/main/CONTRIBUTING.md">
-              Contribution Guidelines
+              contribution guidelines
             </a>{" "}
             before submitting any major changes.
           </p>
