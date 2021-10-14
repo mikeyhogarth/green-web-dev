@@ -3,6 +3,8 @@ import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import Link from "next/link";
 import HtmlHead from "../../components/HtmlHead";
+import components from "../../components/mdxComponents";
+import { FaArrowLeft } from "react-icons/fa";
 
 interface MetaData {
   title: string;
@@ -22,12 +24,15 @@ export default function Resource({ source, data }: Props) {
     <>
       <HtmlHead title={title} description={title} />
       <Link href="/resources">
-        <a>Back to resources</a>
+        <a>
+          <FaArrowLeft className="inline-block mr-1 relative -top" />
+          Back to resources
+        </a>
       </Link>
       <article>
         <h1 className="font-bold">{title}</h1>
         <hr className="pb-8" />
-        <MDXRemote {...source} />
+        <MDXRemote components={components} {...source} />
       </article>
     </>
   );

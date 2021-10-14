@@ -2,6 +2,7 @@ import Link from "next/link";
 import { getContentPages } from "../../utils/file.utils";
 import HtmlHead from "../../components/HtmlHead";
 import externalLinks from "./externalLinks.json";
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 interface Resource {
   content: string;
@@ -52,6 +53,8 @@ export default function Resources(props: Props) {
                 href={el.link}
               >
                 {el.title}
+
+                <FaExternalLinkAlt className="inline-block relative ml-2 -top-1" />
               </a>
             </dt>
             <dd className="mb-6">{el.description}</dd>

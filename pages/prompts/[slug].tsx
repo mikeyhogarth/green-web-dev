@@ -4,6 +4,8 @@ import { serialize } from "next-mdx-remote/serialize";
 import Link from "next/link";
 import capitalize from "lodash/capitalize";
 import HtmlHead from "../../components/HtmlHead";
+import components from "../../components/mdxComponents";
+import { FaArrowLeft } from "react-icons/fa";
 
 export default function Cue({ source, data, slug }: any) {
   const { status, category, difficulty } = data;
@@ -13,7 +15,10 @@ export default function Cue({ source, data, slug }: any) {
       <HtmlHead title={data.title} description={data.title} />
 
       <Link href="/prompts">
-        <a className="print:hidden">Back to prompts</a>
+        <a className="print:hidden">
+          <FaArrowLeft className="inline-block mr-1 relative -top" />
+          Back to prompts
+        </a>
       </Link>
       <article>
         <h1 className="print:text-3xl">{data.title}</h1>
@@ -26,11 +31,11 @@ export default function Cue({ source, data, slug }: any) {
           <dd>{capitalize(difficulty)}</dd>
         </dl>
         <hr className="pb-8" />
-        <MDXRemote {...source} />
+        <MDXRemote components={components} {...source} />
         <div className="bg-secondary text-primary p-4 px-8 mt-10 print:hidden">
           <p className="mb-0">
-            Spotted a typo, mistake or enhancement? Help to improve this content
-            by{" "}
+            Have you spotted a typo, mistake or enhancement? You can help to
+            improve this content by{" "}
             <a
               target="_blank"
               rel="noreferrer"
