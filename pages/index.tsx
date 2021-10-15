@@ -10,8 +10,9 @@ export default function Home() {
           Practical advice for creating{" "}
           <span className="text-primary">sustainable</span> web applications.
           <aside className="text-2xl py-5 text-gray-500 font-light">
-            Tips and tricks for minimizing the carbon footprint of your website.
-            Written and curated by web developers, for web developers.
+            Advice and information to help you minimize the carbon footprint of
+            your website. Written and curated by web developers, for web
+            developers.
           </aside>
         </h2>
         <nav className="text-center md:text-left my-6 print:hidden">
