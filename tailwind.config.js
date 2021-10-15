@@ -12,6 +12,8 @@ module.exports = {
         print: { raw: "print" },
       },
       colors: {
+        black: "#212121",
+        white: "#FDFDFD",
         primary: "#2E7D32",
         secondary: "#E8F5E9",
         highlight: "#4CAF50",

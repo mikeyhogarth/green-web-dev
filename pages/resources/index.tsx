@@ -21,9 +21,9 @@ export default function Resources(props: Props) {
         title="Resources"
         description="Deep dives and resources about sustainable web dev"
       />
-
-      <h2>Site Resources</h2>
-      <p>Information and articles produced by us:</p>
+      <h1>Resources</h1>
+      <h2>Our Resources</h2>
+      <p>Information and articles produced by us.</p>
       <ul className="list-disc">
         {props.resources.map((r) => (
           <li key={r.slug}>

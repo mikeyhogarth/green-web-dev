@@ -1,9 +1,15 @@
 /*
 Headings
 */
+
 h1 {
-  @apply text-4xl;
+  @apply text-5xl pt-6;
 }
+
+main h1 {
+  @apply border-b border-gray-200 pb-8;
+}
+
 h2 {
   @apply text-3xl mt-14;
 }

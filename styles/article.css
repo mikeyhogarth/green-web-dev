@@ -2,10 +2,6 @@ article {
   @apply mb-10;
 }
 
-article h1:first-of-type {
-  @apply text-5xl pt-6;
-}
-
 /**
 Prompt Overviews
 */
