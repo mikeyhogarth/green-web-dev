@@ -25,7 +25,7 @@ export default function Prompts({ categories, prompts }: Props) {
       <h1>Prompts</h1>
       {categories.map((category) => (
         <section key={category}>
-          <h3>{capitalize(category)}</h3>
+          <h2>{capitalize(category)}</h2>
           <ul>
             {prompts
               .filter(

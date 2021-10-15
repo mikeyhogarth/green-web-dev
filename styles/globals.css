@@ -2,10 +2,11 @@
 @import "./tailwind.css";
 
 /* Components */
-@import "./buttons.css";
+@import "./theme.css";
 @import "./typography.css";
-@import "./code.css";
 @import "./article.css";
+@import "./code.css";
 @import "./misc.css";
 @import "./tables.css";
 @import "./forms.css";
+@import "./buttons.css";
