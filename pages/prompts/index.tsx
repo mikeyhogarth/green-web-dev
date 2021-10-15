@@ -19,7 +19,7 @@ export default function Prompts({ categories, prompts }: Props) {
     <div>
       <HtmlHead
         title="Prompts"
-        description="Quick tips and tricks to help reduce the carbon footprint of your website or application"
+        description="Quick tips and advice to help reduce the carbon footprint of your website or application"
       />
 
       <h1>Prompts</h1>
