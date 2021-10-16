@@ -8,11 +8,10 @@ export default function Home() {
       <div className="pb-10">
         <h2 className="mt-0 md:mt-10 leading-tight text-3xl md:text-6xl font-bold">
           Practical advice for creating{" "}
-          <span className="text-primary">sustainable</span> web applications.
+          <span className="text-primary">greener</span> web applications.
           <aside className="text-2xl py-5 text-gray-500 font-light">
-            Advice and information to help you minimize the carbon footprint of
-            your website. Written and curated by web developers, for web
-            developers.
+            Minimize the carbon footprint of your website using free
+            community-sourced prompts and resources written by web developers.
           </aside>
         </h2>
         <nav className="text-center md:text-left my-6 print:hidden">
@@ -44,7 +43,8 @@ export default function Home() {
           <h3 className="text-xl mt-4 text-primary font-bold">Resources</h3>
           <p>
             Resources, deep-dives and external links covering a myriad of
-            subjects around the topic of sustainable web development.
+            subjects around the topic of environmentally sustainable web
+            development.
           </p>
           <Link href="/resources">
             <a>Browse Resources</a>
