@@ -36,10 +36,9 @@ export default function Resources(props: Props) {
 
       <h2>External Links</h2>
       <p className="pb-4">
-        Links to allies and fellow knowledge-sharers in the field of sustainable
-        web development. Please take the time to read these — our site covers
-        ways to reduce data and CPU usage, but does not go into the specifics of
-        why doing so is important; if you are interested in a deeper dive, we
+        Links to fellow knowledge-sharers in the field of sustainable web
+        development. Please take the time to read these — our site covers ways
+        to reduce data and CPU usage, but for a broader look at the topic we
         recommend these resources:
       </p>
       <dl>

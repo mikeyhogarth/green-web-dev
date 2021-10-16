@@ -16,7 +16,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       </Head>
       <HtmlHead
         title="Reduce the carbon footprint of your website"
-        description="Practical web development prompts for minimizing the carbon footprint of your website or application. Written and curated by web developers, for web developers."
+        description="Practical web development prompts for minimizing the carbon footprint of your website or application."
       />
 
       <Header />
