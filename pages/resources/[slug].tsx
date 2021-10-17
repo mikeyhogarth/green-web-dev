@@ -31,7 +31,6 @@ export default function Resource({ source, data }: Props) {
       </Link>
       <article>
         <h1 className="font-bold">{title}</h1>
-        <hr className="pb-8" />
         <MDXRemote components={components} {...source} />
       </article>
     </>
