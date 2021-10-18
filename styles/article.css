@@ -57,3 +57,14 @@ article aside h5 {
 article .contribute-callout {
   @apply bg-gray-100 border-l-8 border-gray-400;
 }
+
+/*
+  Linkified Headers
+*/
+main article h1 a,
+main article h2 a,
+main article h3 a,
+main article h4 a,
+main article h5 a {
+  @apply no-underline inline-block text-gray-600 hover:text-gray-500 !important;
+}
