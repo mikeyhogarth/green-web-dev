@@ -2,36 +2,36 @@
 title: Import efficiently
 category: javascript
 difficulty: easy
-status: draft
+status: complete
 ---
 
-Ensure that you're not importing more of a module than you need. You might be unknowingly serving your users a bunch of JavaScript code that will never be executed, increasing the data sent over the wire and subsequently the carbon footprint of your website.
+Ensure that you're importing modules efficiently. You might be unknowingly increasing your build times and serving your users a ton of JavaScript that will never be executed, increasing the carbon footprint of your website.
 
-## The Lodash Example
+## Example: Importing Lodash
 
-Take for example the popular utility library [Lodash](https://lodash.com/), which provides a collection of useful functions for working with JavaScript. Many developers would be correct in thinking that an import in the following format would be wasteful because it would import the whole Lodash library:
+[Lodash](https://lodash.com/) is a popular utility library which provides a collection of useful functions for working with JavaScript. You would be correct in thinking that the following import strategy would be wasteful because it would import the whole Lodash library, even if you are only using a small part of it:
 
 ```
 import _ from "lodash";
 console.log(_.capitalize("hello world"));
 ```
 
-Where many people go wrong though, is in the belief that the following code solves the problem;
+Where many people go wrong though, is in the belief that the following code solves this problem;
 
 ```
 import { capitalize } from "lodash";
 console.log(capitalize("hello world"));
 ```
 
-In fact, **this is not true**. Both of the above two imports will result in the entire `lodash` library being imported into your bundle and served to the user. It is possible for bundlers such as webpack to use [tree-shaking to throw away dead code](https://webpack.js.org/configuration/optimization/), however this feature is normally turned off by default (the reason being that the module may have side-effects that run on import, so it's not safe just to chuck that code away without asking).
+In fact, **this is not true**. Both of the above two imports will result in the entire `lodash` library being imported into your bundle and served to the user. It is possible for bundlers such as webpack to [use tree-shaking to throw away dead code](https://webpack.js.org/configuration/optimization/), however this feature is normally turned off by default (the reason being that the module may have side-effects that run on import, so it's not safe just to throw code away without asking!).
 
-So what is the solution? In the case of Lodash, you can reduce your bundle size by importing only from the **category** you are using:
+So what is the solution? In the case of Lodash, the developers have split their functionality up into _categories_ and you can reduce your bundle size by importing only from the category you are using:
 
 ```
 import { capitalize } from "lodash/string";
 ```
 
-Or alternatively (for an even smaller import) by importing just the particular function you are using:
+Alternatively for an even smaller bundle you can import only the particular function you are using:
 
 ```
 import capitalize from "lodash/capitalize";
@@ -39,9 +39,11 @@ import capitalize from "lodash/capitalize";
 
 ## Prevention
 
-Whilst the above example is entirely lodash-specific, the principle holds true for all imports. Unfortunately there is no "one size fits all" strategy for dealing with this as it depends on how the module you are importing has been implemented - what you _can_ do though is ensure that you are no longer assuming what does/doesn't make things better through the use of tools.
+Whilst the above example is lodash-specific, the principle of importing efficiently holds true for any module you import. Unfortunately there is no "one size fits all" strategy for dealing with this issue as it depends very much on the implementation of the module you are importing - popular UI component library [MUI](https://mui.com/), for example, has [a completely different approach to minimizing bundle sizes](https://mui.com/guides/minimizing-bundle-size/).
 
-One such tool is the [Import Cost](https://marketplace.visualstudio.com/items?itemName=wix.vscode-import-cost) Visual Studio extension by Wix. For every import you make in your code, it will add in a pseudo-comment telling you how big that import is. This means you will never make assumptions about what is/isn't an efficient import ever again!
+There is therefore no single thing you can do which will cover off all of your imports, but one thing you _can_ do is ensure that you are no longer making assumptions about what does/doesn't make things more efficient through the use of **tools**.
+
+One such tool is the [Import Cost VSCode extension](https://marketplace.visualstudio.com/items?itemName=wix.vscode-import-cost) by Wix. Install this into your editor and it will display the import cost for each module in your codebase. This means you will never make assumptions about what is/isn't an efficient import ever again!
 
 <div className="text-center">
   <img
