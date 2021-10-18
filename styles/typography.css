@@ -3,7 +3,7 @@ Headings
 */
 
 h1 {
-  @apply text-5xl pt-6;
+  @apply text-5xl print:text-3xl pt-6;
 }
 
 main h1 {

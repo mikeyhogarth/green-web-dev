@@ -21,7 +21,7 @@ export default function Cue({ source, data, slug }: any) {
         </a>
       </Link>
       <article>
-        <h1 className="border-none pb-0 print:text-3xl">{data.title}</h1>
+        <h1 className="border-none pb-0">{data.title}</h1>
         <dl className="prompt-overview">
           <dt>Status</dt>
           <dd>{capitalize(status)}</dd>
