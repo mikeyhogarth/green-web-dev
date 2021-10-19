@@ -1,0 +1,50 @@
+---
+title: Optimise data queries
+category: backend
+difficulty: easy
+status: draft
+---
+
+When querying for external data, ensure that your requests are efficient and inexpensive by only requesting what you need and caching agressively. Requesting excessive amounts of data will not only slow your application down, it will increase its carbon footprint. The following is a list of common mistakes to look out for;
+
+## External APIs
+
+Making optimisations for queries to external APIs is particularly important because these services are often rate-limited so on top of the carbon cost and the slow response times, you may also be burning through your quota faster than you need to!
+
+- When querying an external REST API, check whether the provider allows you to specify which fields to return. If it does, ensure you only ask for the fields you need. If the external API implements the [JsonAPI](https://jsonapi.org/) specification, it may have this functionality by default (see [JsonAPI compound documents](https://jsonapi.org/format/#document-compound-documents)).
+- Don't send the same query to an API endpoint multiple times if that data is not likely to have changed. Reference data such as categories should be cached locally if possible.
+- If the API is graphQL based then you will be able to request associated records in a single query - graphQL always allows you to do this by design.
+
+## Databases
+
+It is equally important to optimise queries that go directly to a database.
+
+- If using an RDBMS, never `select * from table` unless you are going to be using every single field on that table.
+- If using a NoSQL database, never `scan` the whole table unless you are planning to use every single record that is returned and have no alternatives. As a general rule, if you are finding that you are having to do this then it probably means there is a problem with your database design - you should optimise for the access patterns you are going to need.
+- Consider pre-calculating aggregated values such as sums, counts and averages. Rather than re-computing these values every time the user asks, you could just calculate them once every time a new record is inserted. Doing this will also mean that you can be confident that your database will scale.
+
+## N+1 Queries antipattern
+
+The **N+1 queries antipattern** occurs when you have a query nested within the items returned by another query and is usually encountered when you are querying for associated records within an existing list of records. To illustrate this, imagine you are creating a blog with the following one-to-many relationship;
+
+```
+A post has 1 author
+An author has many posts
+```
+
+You can easily get "all blogs" in a single database or API query, but if you are not careful you may end up requesting the author details for each blog post you returned individually (hence the name N+1 - N queries for authors plus the original 1 to get the post).
+
+Your code can be affected by this whether you are querying from a REST API or connecting directly to a database and can sometimes be obscured if you are using a client library to handle the query for you. It is always important to keep an eye on your logs to make sure you are not sending an excessive number of queries.
+
+In terms of avoiding the problem:
+
+- If this is an API that you do not have control over, check whether other endpoints are more appropriate or whether functionality exists to return the data you need in a single query. If you do have control over the API, ensure that the funcionality exists to serve the requests you want to make.
+- If this is a database, you should optimise queries for the access patterns you require - in an RDBMS, this may mean making one query that aggregates multiple records together into one.
+- You are particularly susceptible to this issue if you are using an [ORM library](https://en.wikipedia.org/wiki/Object%E2%80%93relational_mapping) because those libraries explicitly try to hide the complexities of a query from you. Inexperienced developers may find that they are sending N+1 queries without even knowing! ORM libraries should always provide functionality to get around the issue, such as the [eager loading funcionality in ActiveRecord](https://guides.rubyonrails.org/active_record_querying.html#eager-loading-associations) from the Ruby on Rails ecosystem.
+- If you are building a GraphQL API you will almost certainly encounter this issue as your users will, by design, be able to query associated records for every data type in your schema. Because this issue is so common, a batching-and-caching library called [DataLoader](https://github.com/graphql/dataloader) was created to deal with this very issue.
+
+## Relevant Links
+
+- [JSON API Compound Documents](https://jsonapi.org/format/#document-compound-documents)
+- [Eager loading for Django ORM](https://docs.djangoproject.com/en/3.2/ref/models/querysets/#select-related)
+- [Eager loading for ActiveRecord ORM](https://guides.rubyonrails.org/active_record_querying.html#eager-loading-associations)
