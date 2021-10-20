@@ -7,7 +7,7 @@ h1 {
 }
 
 main h1 {
-  @apply border-b border-gray-200 pb-8;
+  @apply border-b border-gray-200 pb-8 leading-tight;
 }
 
 h2 {
@@ -32,7 +32,7 @@ h5 {
 }
 
 p {
-  @apply text-base mb-4;
+  @apply text-base mb-4 leading-loose;
 }
 
 /**

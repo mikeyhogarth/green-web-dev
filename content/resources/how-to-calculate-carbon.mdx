@@ -14,8 +14,6 @@ A French think tank called [The Shift project](https://theshiftproject.org/en/ho
 
 From these three facets, the 1-byte model proposes that you can get a carbon estimate for your application. This will, of course, only be an estimate - but getting an accurate number is much less important than the reasoning behind the model: less data means less carbon... and luckily for us, data is _very_ easy to measure: We can see it flowing all through our applications, from the weight of the pages and resources we send to users right back to the requests we send to databases, APIs and microservices.
 
-The people over at the [Green Web Foundation](https://www.thegreenwebfoundation.org/) implemented a Javascript library called [CO2.js](https://github.com/thegreenwebfoundation/co2.js) which aims to provide an implementation of the 1-byte model for use in tools and APIs.
-
 In addition to data, it is also well established that **CPU cycles** are a drain on electricity and batteries - make your computer work harder and it will require more power. This is much more difficult to measure, but again measuring is very much a "nice to have" - just because we can't equate an exact figure to the carbon footprint of an application does not mean we can't optimise to reduce it. Most engineers are familiar with the concept of writing efficient code (in fact at a certain point in their career, engineers become very uncomfortable with _not_ optimizing!) but there are always more ways to reduce cycles further.
 
 Whilst it may be that we can never see the true carbon impact of our applications, the main messaging around this issue is very clear:
@@ -26,3 +24,11 @@ Whilst it may be that we can never see the true carbon impact of our application
 Minimise these two things and you minimise the electricity consumption and thus the carbon footprint of your application, and in most cases you will also end up minimising your costs and providing a better user experience at the same time. These are the things that the [prompts](/prompts) on this site can help you with (we're web developers, not scientists!).
 
 For a deeper dive on the specifics of calculating carbon emissions, we suggest you check out some of the [external resources](/resources) that we link to in our resources section where people have dedicated much more time to the science behind the issue - in particular, the Green Web Foundation who have produced several [tools](https://www.thegreenwebfoundation.org/green-web-feed/) and [services](https://www.thegreenwebfoundation.org/services/) to help calculate website carbon, as well as some thorough [articles](https://www.thegreenwebfoundation.org/news/) on the subject.
+
+## Useful tools
+
+A number of groups have produced useful tools to **aid with evaluating the carbon footprint of the web**.
+
+The people over at the [Green Web Foundation](https://www.thegreenwebfoundation.org/) implemented a Javascript library called [CO2.js](https://github.com/thegreenwebfoundation/co2.js) which aims to provide an implementation of the 1-byte model for use in tools and APIs.
+
+[Sustainable Web Design](https://sustainablewebdesign.org/) (built by [MightyBytes](https://www.mightybytes.com/) and [Wholegrain Digital](https://www.wholegraindigital.com/)) have produced a couple of tools which can help you calculate a website's carbon footprint: The [Ecograder](https://ecograder.com/) scores websites based on a number of factors using a combination of external APIs. The [Website carbon calculator](https://www.websitecarbon.com/) can give you an estimate of your website's carbon footprint (including a [detailed explaination of how that estimate is calculated](https://www.websitecarbon.com/how-does-it-work/)).

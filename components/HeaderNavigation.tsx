@@ -16,12 +16,7 @@ const HeaderNavigation = ({ open, setOpen }: HeaderProps) => {
       <ul className="py-2 mt-0 md:mt-5 md:py-0 text-xl text-white list-none">
         <NavLink href="/about" text="About" setOpen={setOpen} />
         <NavLink href="/prompts" text="Prompts" setOpen={setOpen} />
-        <NavLink
-          href="/resources"
-          text="Resources"
-          setOpen={setOpen}
-          supressBorder={true}
-        />
+        <NavLink href="/resources" text="Resources" setOpen={setOpen} />
       </ul>
     </nav>
   );
@@ -32,21 +27,16 @@ interface NavlinkProps {
   href: string;
   text: string;
   setOpen: (isOpen: boolean) => void;
-  supressBorder?: boolean;
 }
 
-function NavLink({ href, text, supressBorder, setOpen }: NavlinkProps) {
+function NavLink({ href, text, setOpen }: NavlinkProps) {
   const router = useRouter();
   const pathname: string = router.pathname;
   const active: boolean = pathname === href || pathname.startsWith(`${href}/`);
 
   const classes = `${active ? "active" : ""}`;
   return (
-    <li
-      className={`md:inline-block ${
-        supressBorder ? "" : "border-b-2"
-      } border-gray-800 md:border-none`}
-    >
+    <li className="md:inline-block">
       <Link href={href}>
         <a
           className={
