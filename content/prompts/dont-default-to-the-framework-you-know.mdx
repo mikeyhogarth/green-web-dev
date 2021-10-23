@@ -1,0 +1,32 @@
+---
+title: Don't default to using the framework you know
+category: javascript
+difficulty: medium
+status: draft
+---
+
+When choosing a frontend framework, explore the alternatives before defaulting to the framework you know. Other frameworks may offer smaller, less CPU-intensive alternatives that help conserve batteries and save on data over the wire.
+
+## React might not always be the right choice
+
+To cut straight to the chase: many developers will just use [React](https://reactjs.org/) for everything. The React library currently dominates the UI landscape in terms of [adoption](https://www.npmtrends.com/angular-vs-react-vs-vue) and is supported by a huge ecosystem of components and plugins, however you should not simply default to choosing it because it is popular. Weight up the pros and cons of the alternatives and make an informed choice. React is an excellent library, but there are
+
+## For people who really like React
+
+Consider [Preact](https://preactjs.com/).
+
+If you are very attached and bought-in to React or its ecosystem, consider trialling **Preact**. It aims to maintain parity with React in terms of its API (there are [a few differences](https://preactjs.com/guide/v10/differences-to-react) but nothing major) which means you can try it out simply by using [bundler aliases](https://preactjs.com/guide/v10/switching-to-preact). React and React-DOM combined deploy a runtime that clocks in at around 140kb out of the box (you can get it as low as 40kb if you go to town on optimisation) - you pay that data cost before you write a single line of your own code, simply by choosing React. The runtime for Preact, by comparison, clocks in at just over 3kb.
+
+## For people who are happy to learn a new library
+
+Consider [Svelte](https://svelte.dev/)
+
+The battle lines are constantly shifting in terms of runtime sizes, so it's impossible to say which library, at time of writing, has the smallest runtime... or is it? With its revolutionary approach, **Svelte** presents a new way of thinking about frontend libaries by presenting a compiler-based approach, therefore shipping no runtime at all to the client.
+
+Svelte has also abandoned the virutal DOM approach that dominated the current generation of Javascript frameworks. The Virtual DOM point is an important one from a sustainability perspective because in and of itself it brings no advantages, it's [simply a means to an end](https://svelte.dev/blog/virtual-dom-is-pure-overhead) and causes your client to perform un-necessary work.
+
+Many frontend developers today are already treating their frameworks as if they were compilers (building from the command line, deploying minified artefacts) but are not getting any of the benefits! This is why many people believe that Svelte (along with its contemporaries such as [SolidJS](https://www.solidjs.com/)) represent the next generation of JavaScript libraries.
+
+## Maybe you don't even need a framework?
+
+It is possible, after a time, to get a bit too close to the forest when it comes to frontend development and to forget that it is possible to get things working without using a framework at all. If you can achieve what you need to simply by using plain old JavaScript, and you don't need to worry about scaling up, why not just do that? The data and CPU savings might be huge.
