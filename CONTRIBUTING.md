@@ -4,17 +4,21 @@ It is our intention that this website be contributable to by the whole of the we
 
 ## The first rule
 
-Before spending any significant time on any contribution, [raise an issue on our github](https://github.com/mikeyhogarth/green-web-dev/issues).
+Before spending any significant time on any contribution, [raise an issue on our github](https://github.com/mikeyhogarth/green-web-dev/issues)! It's really important to do this **before** creating a pull request so we can discuss the contribution fully and avoid any wasted efforts.
+
+## Prompt stubs
+
+There are a bunch of prompt stubs in the `content` folder which are prompts that we intend to write / include as time goes by. This might be a good place to look if you want to write a prompt, but feel free to also contribute stubs for future writers to pick up if you have a good idea but don't feel like writing a prompt yourself.
 
 ## Contributing a Prompt
 
-Prompts should be quick, digestible bits of advice that can help reduce the carbon footprint of a web application, generally this will either be through reducing CPU cycles or reducing data usage by a significant amount.
+Prompts should be quick, digestible bits of advice that can help reduce the carbon footprint of a web application, generally this will either be through reducing CPU cycles or reducing data usage by a significant amount. It is intended that prompts take no more than 2 minutes maximum to read.
 
 There are a myriad of ways to save data and CPU cycles so any prompts should be fairly wide-reaching/widely applicable and broad. We don't want to end up just listing every single way to make your code more efficient or we'll be here forever!
 
-The first paragraph should **open with a statement that summarises the entire prompt** and should include a **solid reason that this matters from a sustainability perspective**. The carbon footprint element to this should not be tenuous - it should be direct and explained.
+You should try to match the language of the existing prompts. The first paragraph should **open with a statement that summarises the entire prompt** and should include a **solid reason that this matters from a sustainability perspective**. The carbon footprint element to this should _not_ be tenuous - it should be direct and clearly explained.
 
-Prompts should not press a developer to sacrifice code quality or maintainability - if quality is a tradeoff for adopting the advice, state this clearly within the prompts somewhere (probably with its own section) - in reality, things like this should probably not be prompts.
+Prompts should not press a developer to sacrifice code quality or maintainability - if there are tradeoffs for adopting the advice, state this clearly within the prompt somewhere (ideally with its own section) - in reality, things like this should probably not be prompts.
 
 A prompt **Should** have the following properties;
 
