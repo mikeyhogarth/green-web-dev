@@ -30,3 +30,7 @@ A prompt **Should** have the following properties;
 ## Contributing a Resource
 
 For the time being, resources on this site are core-team only, however if you see a resource written elsewhere that is pertinant to any of the prompts, you are free to suggest it as a relevant link.
+
+## Branching Strategy
+
+Fork the codebase from the `develop` branch - pull requests should also be made back into `develop`.
