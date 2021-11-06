@@ -1,5 +1,6 @@
 import React from "react";
 import { FaGithub, FaTwitter, FaFacebook } from "react-icons/fa";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -36,9 +37,9 @@ const Footer = () => {
         !
       </p>
       <p className="text-xs print:hidden">
-        <a className="text-black" href="/cookies-and-privacy">
-          Cookies and privacy
-        </a>
+        <Link href="/cookies-and-privacy">
+          <a className="text-black">Cookies and privacy</a>
+        </Link>
       </p>
     </footer>
   );
