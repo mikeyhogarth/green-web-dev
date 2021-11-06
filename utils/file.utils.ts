@@ -12,7 +12,10 @@ export async function getContentPage(
   contentType: string,
   slug: string
 ): Promise<Item> {
-  const file = path.join(process.cwd(), `content/${contentType}/${slug}.mdx`);
+  const filepath = slug
+    ? `content/${contentType}/${slug}.mdx`
+    : `content/${contentType}.mdx`;
+  const file = path.join(process.cwd(), filepath);
   const source = await readFile(file);
   const { content, data } = matter(source);
   return { content, data, slug };
