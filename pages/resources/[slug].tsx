@@ -1,10 +1,12 @@
-import { getContentPage, getContentPages } from "../../utils/file.utils";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
-import { serialize } from "next-mdx-remote/serialize";
 import Link from "next/link";
 import HtmlHead from "../../components/HtmlHead";
 import components from "../../components/mdxComponents";
 import { FaArrowLeft } from "react-icons/fa";
+import {
+  getStaticPathsForContent,
+  getStaticPropsForContent,
+} from "../../utils/next.utils";
 
 interface MetaData {
   title: string;
@@ -37,37 +39,10 @@ export default function Resource({ source, data }: Props) {
   );
 }
 
-/**
- * GetStaticProps
- * @param param0
- * @returns
- */
 export async function getStaticProps({ params }: any) {
-  const { content, data } = await getContentPage(
-    "resources",
-    params?.slug?.toString() || ""
-  );
-
-  const source = await serialize(content, { scope: data });
-
-  return {
-    props: {
-      source,
-      data,
-    },
-  };
+  return getStaticPropsForContent("resources", params);
 }
 
-/**
- * getStaticPaths
- * @returns
- */
 export async function getStaticPaths() {
-  const pages = await await getContentPages("resources");
-  const paths = pages.map(({ slug }) => ({ params: { slug } }));
-
-  return {
-    paths,
-    fallback: false,
-  };
+  return getStaticPathsForContent("resources");
 }

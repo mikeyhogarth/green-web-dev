@@ -1,13 +1,16 @@
-import { getContentPage, getContentPages } from "../../utils/file.utils";
 import { MDXRemote } from "next-mdx-remote";
-import { serialize } from "next-mdx-remote/serialize";
 import Link from "next/link";
 import capitalize from "lodash/capitalize";
 import HtmlHead from "../../components/HtmlHead";
 import components from "../../components/mdxComponents";
 import { FaArrowLeft } from "react-icons/fa";
 
-export default function Cue({ source, data, slug }: any) {
+import {
+  getStaticPropsForContent,
+  getStaticPathsForContent,
+} from "../../utils/next.utils";
+
+export default function Prompt({ source, data, slug }: any) {
   const { status, category, difficulty } = data;
 
   return (
@@ -59,28 +62,9 @@ export default function Cue({ source, data, slug }: any) {
 }
 
 export async function getStaticProps({ params }: any) {
-  const { content, data } = await getContentPage(
-    "prompts",
-    params?.slug?.toString() || ""
-  );
-
-  const source = await serialize(content, { scope: data });
-
-  return {
-    props: {
-      source,
-      data,
-      slug: params.slug,
-    },
-  };
+  return getStaticPropsForContent("prompts", params);
 }
 
 export async function getStaticPaths() {
-  const pages = await await getContentPages("prompts");
-  const paths = pages.map(({ slug }) => ({ params: { slug } }));
-
-  return {
-    paths,
-    fallback: false,
-  };
+  return getStaticPathsForContent("prompts");
 }
