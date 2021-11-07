@@ -6,7 +6,7 @@ interface Props {
 }
 
 const HtmlHead = ({ title, description }: Props) => {
-  const siteNameTitle = `Green Web Dev :: ${title}`;
+  const siteNameTitle = `${title} - Green Web Dev`;
 
   return (
     <Head>
