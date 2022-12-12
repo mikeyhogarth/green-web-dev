@@ -17,11 +17,9 @@ export default function Prompt({ source, data, slug }: any) {
     <>
       <HtmlHead title={data.title} description={data.title} />
 
-      <Link href="/prompts">
-        <a className="print:hidden">
-          <FaArrowLeft className="inline-block mr-1 relative -top" />
-          Back to prompts
-        </a>
+      <Link href="/prompts" className="print:hidden">
+        <FaArrowLeft className="inline-block mr-1 relative -top" />
+        Back to prompts
       </Link>
       <article>
         <h1 className="border-none pb-0">{data.title}</h1>

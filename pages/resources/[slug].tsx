@@ -26,10 +26,8 @@ export default function Resource({ source, data }: Props) {
     <>
       <HtmlHead title={title} description={title} />
       <Link href="/resources">
-        <a>
-          <FaArrowLeft className="inline-block mr-1 relative -top" />
-          Back to resources
-        </a>
+        <FaArrowLeft className="inline-block mr-1 relative -top" />
+        Back to resources
       </Link>
       <article>
         <h1>{title}</h1>

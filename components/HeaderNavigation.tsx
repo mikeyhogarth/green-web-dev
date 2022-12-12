@@ -37,15 +37,14 @@ function NavLink({ href, text, setOpen }: NavlinkProps) {
   const classes = `${active ? "active" : ""}`;
   return (
     <li className="md:inline-block">
-      <Link href={href}>
-        <a
-          className={
-            "block md:inline my-2 md:my-0  md:border-white md:ml-4 " + classes
-          }
-          onClick={() => setOpen(false)}
-        >
-          {text}
-        </a>
+      <Link
+        href={href}
+        className={
+          "block md:inline my-2 md:my-0  md:border-white md:ml-4 " + classes
+        }
+        onClick={() => setOpen(false)}
+      >
+        {text}
       </Link>
     </li>
   );

@@ -37,8 +37,8 @@ const Footer = () => {
         !
       </p>
       <p className="text-xs print:hidden">
-        <Link href="/cookies-and-privacy">
-          <a className="text-black">Cookies and privacy</a>
+        <Link href="/cookies-and-privacy" className="text-black">
+          Cookies and privacy
         </Link>
       </p>
     </footer>

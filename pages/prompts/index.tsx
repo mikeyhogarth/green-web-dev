@@ -34,7 +34,7 @@ export default function Prompts({ categories, prompts }: Props) {
               .map((prompt) => (
                 <li key={prompt.slug}>
                   <Link href={`/prompts/${prompt.slug}`}>
-                    <a>{prompt.data.title}</a>
+                    {prompt.data.title}
                   </Link>
                 </li>
               ))}

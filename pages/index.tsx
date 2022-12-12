@@ -15,13 +15,14 @@ export default function Home() {
           </aside>
         </h2>
         <nav className="text-center md:text-left my-6 print:hidden">
-          <Link href="/about">
-            <a className="btn btn-primary inline-block md:mr-4">Start Here</a>
+          <Link href="/about" className="btn btn-primary inline-block md:mr-4">
+            Start Here
           </Link>
-          <Link href="/prompts">
-            <a className="hidden md:inline-block btn btn-secondary">
-              Browse Prompts
-            </a>
+          <Link
+            href="/prompts"
+            className="hidden md:inline-block btn btn-secondary"
+          >
+            Browse Prompts
           </Link>
         </nav>
       </div>
@@ -34,9 +35,7 @@ export default function Home() {
             Browse through numerous prompts, ideas and techniques to help you
             keep your website&apos;s carbon footprint low.
           </p>
-          <Link href="/prompts">
-            <a>Browse Prompts</a>
-          </Link>
+          <Link href="/prompts">Browse Prompts</Link>
         </div>
         <div className="flex-grow md:mx-2 p-4 md:w-1/3">
           <FaBookReader className="inline-block text-6xl text-primary" />
@@ -46,9 +45,7 @@ export default function Home() {
             subjects around the topic of environmentally sustainable web
             development.
           </p>
-          <Link href="/resources">
-            <a>Browse Resources</a>
-          </Link>
+          <Link href="/resources">Browse Resources</Link>
         </div>
         <div className="flex-grow p-4 md:w-1/3">
           <FaTree className="inline-block text-6xl text-primary" />
@@ -58,7 +55,7 @@ export default function Home() {
             create global impact on climate change.
           </p>
           <Link href="/prompts/adopt-a-data-budget">
-            <a>If you read one thing, read this</a>
+            If you read one thing, read this
           </Link>
         </div>
       </div>

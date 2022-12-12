@@ -9,8 +9,8 @@ export default function Header() {
     <>
       <header className="bg-primary text-white md:flex md:flex-row print:hidden">
         <h1 className="pl-5 lg:pl-20 xl:pl-40 self-center md:tracking-widest md:min-w-max font-typewriter font-bold text-2xl md:text-4xl py-5 mb-0">
-          <Link href="/">
-            <a className="mr-5">Green web dev</a>
+          <Link href="/" className="mr-5">
+            Green web dev
           </Link>
 
           <button

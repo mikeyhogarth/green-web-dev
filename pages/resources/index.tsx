@@ -27,9 +27,7 @@ export default function Resources(props: Props) {
       <ul className="list-disc">
         {props.resources.map((r) => (
           <li key={r.slug}>
-            <Link href={`/resources/${r.slug}`}>
-              <a>{r.data.title}</a>
-            </Link>
+            <Link href={`/resources/${r.slug}`}>{r.data.title}</Link>
           </li>
         ))}
       </ul>
