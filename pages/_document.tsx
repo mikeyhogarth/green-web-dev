@@ -12,7 +12,6 @@ class MyDocument extends Document {
             property="og:image"
             content="/media/icons/android-chrome-192x192.png"
           />
-          <meta name="twitter:creator" content="@MetalMikey666" />
           <meta
             name="twitter:image"
             content="/media/icons/android-chrome-192x192.png"

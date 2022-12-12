@@ -12,11 +12,6 @@ const Footer = () => {
           Icon={FaGithub}
         />
         <SocialIcon
-          link="https://twitter.com/greenwebdev_org"
-          linkTitle="Twitter Link"
-          Icon={FaTwitter}
-        />
-        <SocialIcon
           link="https://www.facebook.com/greenwebdev"
           linkTitle="Facebook Link"
           Icon={FaFacebook}
