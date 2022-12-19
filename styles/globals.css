@@ -2,7 +2,6 @@
 @import "./tailwind.css";
 
 /* Components */
-@import "./theme.css";
 @import "./typography.css";
 @import "./article.css";
 @import "./code.css";

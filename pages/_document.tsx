@@ -39,7 +39,18 @@ class MyDocument extends Document {
           />
           <link rel="manifest" href="/site.webmanifest" />
         </Head>
-        <body>
+        <body className="bg-white text-black">
+          <div className="p-6 bg-blue-900 text-yellow-300 min-h-10 text-center text-2xl">
+            This site is being repurposed into an e-book called{" "}
+            <a
+              className="underline text-red-400 hover:text-red-700 "
+              href="https://mikeyhogarth.github.io/the-green-web-dev-book/"
+            >
+              The Green Web Dev Book
+            </a>{" "}
+            and will therefore receive no further updates. We will be shutting
+            down some time in 2023.
+          </div>
           <Main />
           <NextScript />
         </body>
