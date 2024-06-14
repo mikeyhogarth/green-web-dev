@@ -1,11 +1,13 @@
 # Green Web Dev
 
-An effort to collect together advice and guidence around sustainable web development for web developers.
-
-## Contributing
-
-See [CONTRIBUTING.md](./CONTRIBUTING.md)
-
-## License
-
-This application and all its content is licensed under GPL3 - you may fork, take and use this content and this application any way you wish, but you **must** share-alike in the same way we are here.
+> # Discontinued
+>
+> This project, formerly a website, has now been migrated to en -book format.
+> You can find the new project at the following web address:
+> 
+> https://mikeyhogarth.github.io/the-green-web-dev-book/
+>
+> The source code for the e-book version is also available on github
+> 
+> https://github.com/mikeyhogarth/the-green-web-dev-book
+>
